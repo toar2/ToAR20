@@ -962,7 +962,7 @@ public class MapsActivity extends FragmentActivity implements
         if(getIntent().getStringExtra("navigate")!=null){
 
             Toast.makeText(getApplicationContext(), "user wants to navigate to " + modelsTitles[getIntent().getIntExtra("navigateToModelNumber", 0) - 1], Toast.LENGTH_LONG).show();
-            finish();
+//            finish();
 
         }
 
