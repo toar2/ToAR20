@@ -50,6 +50,7 @@ public class augmentModels extends AppCompatActivity {
 
 
     String[] modelsInfo;
+    String[] modelsNames;
 
     String uniqueUserID, userName;
     private double latitude, longitude;
@@ -161,7 +162,11 @@ public class augmentModels extends AppCompatActivity {
         setBackground(arrayView[0].getId());
     }
 
-
+    @Override
+    public void onBackPressed(){
+        super.onBackPressed();
+        this.finish();
+    }
     private void setupModel() {
 
 
@@ -542,7 +547,11 @@ public class augmentModels extends AppCompatActivity {
             @Override
             public void onClick(View view){
 
-                Toast.makeText(getApplicationContext(), "Navigate to " + currentModelAugmented, Toast.LENGTH_LONG).show();
+                Intent navigateToLocationIntent = new Intent(getApplicationContext(), MapsActivity.class);
+                navigateToLocationIntent.putExtra("navigate", modelsNames[selected-1]);
+                startActivity(navigateToLocationIntent);
+
+
 
             }
         });
@@ -557,6 +566,7 @@ public class augmentModels extends AppCompatActivity {
                 } ;
         modelsInfo = new String[] {"https://www.serenahotels.com/serenaislamabad/en/default.html","https://thecentaurusmall.com/", "https://www.lonelyplanet.com/pakistan/islamabad-and-rawalpindi/attractions/shah-faisal-mosque/a/poi-sig/464356/357196", "http://phcsingapore.org/emergingpakistan/pakistan-monument.html", "http://www.nust.edu.pk/Library/Pages/default.aspx", "https://en.wikipedia.org/wiki/Jinnah_Convention_Centre", "http://www.senate.gov.pk/en/parliament.php?id=-1&catid=4&subcatid=267&cattitle=Parliament%20House", "http://www.nust.edu.pk/INSTITUTIONS/Schools/SCEE/Institutes/NICE/Pages/default.aspx","http://www.nust.edu.pk/Pages/Default.aspx", "http://www.nust.edu.pk/Pages/Default.aspx", "http://www.nust.edu.pk/News/Pages/Khatm-e-Quran-Ceremonies-held-at-NUST-Mosques.aspx", "http://www.nust.edu.pk/INSTITUTIONS/Schools/SEECS/Pages/default.aspx"};
 
+        modelsNames = new String[] {"serena.sfb", "centaurus.sfb", "faisalmosque.sfb", "monument.sfb", "library.sfb", "convention.sfb" ,"parliment.sfb", "nice.sfb", "nustgatethree.sfb", "nustgateten.sfb", "nustmosque.sfb", "seecs.sfb"};
 
     }
 

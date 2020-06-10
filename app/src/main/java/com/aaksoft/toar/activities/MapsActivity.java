@@ -932,6 +932,13 @@ public class MapsActivity extends FragmentActivity implements
             //showLoadingMessage();
         }
 
+        if(getIntent().getStringExtra("navigate") != null){
+
+            Toast.makeText(getApplicationContext(), "user wants to navigate to " + getIntent().getStringExtra("navigate"), Toast.LENGTH_LONG).show();
+            finish();
+
+        }
+
         refreshCurrentUser();
     }
 
