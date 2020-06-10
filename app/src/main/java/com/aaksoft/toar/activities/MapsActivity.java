@@ -318,16 +318,21 @@ public class MapsActivity extends FragmentActivity implements
 
     private FirebaseAuth mAuth;                             // this is used to sign up the user
     public FirebaseUser currentUser;
-
     StorageReference userImagesStorageReference;
     DatabaseReference usersDatabaseReference;
     DatabaseReference usersImagesDatabaseReference;
 
-
     public Users currentUserPojo;
     public boolean beenGreetedOnce = false;
-
     public Boolean isUserSignedIn = false;
+
+
+
+    String[] modelsNames = new String[] {"serena.sfb", "centaurus.sfb", "faisalmosque.sfb", "monument.sfb", "library.sfb", "convention.sfb" ,"parliment.sfb", "nice.sfb", "nustgatethree.sfb", "nustgateten.sfb", "nustmosque.sfb", "seecs.sfb"};
+    String[] modelsTitles = new String[] {"Serena Hotel", "Centaurus Mall", "Faisal Mosque", "Monument", "Nust Library", "Convention Center", "Paliment Building", "Nust NICE", "Nust Gate 3", "Nust Gate 10", "Nust Mosque", "Nust SEECS"};
+    LatLng[] modelCoordinates = new LatLng[] {new LatLng(33.7153,73.1020), new LatLng(33.7077,73.0501), new LatLng(33.7299,73.0383), new LatLng(33.6931,73.0689), new LatLng(33.6421,72.9923), new LatLng(33.7182,73.1055), new LatLng(33.7302,73.0971), new LatLng(33.640538  ,72.984592), new LatLng(33.64609 ,72.980647), new LatLng(33.649184,72.999722), new LatLng(33.643992,72.985466), new LatLng(33.64284793989045,72.99053166073543)};
+
+
 
 
 
@@ -646,91 +651,112 @@ public class MapsActivity extends FragmentActivity implements
                     public boolean onMarkerClick(@NonNull Marker marker) {
                         //Toast.makeText(MapsActivity.this, marker.getTitle(), Toast.LENGTH_LONG).show();
                         URI model=null;
-                        if(marker.getTitle().equals("NUST SEECS")){
-                            try {
-                                model = new URI("seecs.sfb".replace(" ","%20"));
-                            } catch (URISyntaxException e) {
-                                e.printStackTrace();
+
+                        for(int i = 0; i < 12; i++){
+
+                            if(marker.getTitle().equals(modelsTitles[i])){
+
+
+
+                                try{
+                                    model = new URI(modelsNames[i].replace(" ", "%20"));
+//                                    Toast.makeText(getApplicationContext(), modelsTitles[i], Toast.LENGTH_LONG);
+                                    break;
+                                }
+                                catch(URISyntaxException e){
+                                    e.printStackTrace();
+                                }
                             }
                         }
-                        else if(marker.getTitle().equals("NUST Masjid")){
-                            try {
-                                model = new URI("nustmosque.sfb".replace(" ","%20"));
-                            } catch (URISyntaxException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                        else if(marker.getTitle().equals("NUST Gate 1")){
-                            try {
-                                model = new URI("nustgateten.sfb".replace(" ","%20"));
-                            } catch (URISyntaxException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                        else if(marker.getTitle().equals("NUST Gate 3")){
-                            try {
-                                model = new URI("nustgatethree.sfb".replace(" ","%20"));
-                            } catch (URISyntaxException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                        else if(marker.getTitle().equals("NUST NICE")){
-                            try {
-                                model = new URI("nice.sfb".replace(" ","%20"));
-                            } catch (URISyntaxException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                        else if(marker.getTitle().equals("centaurus")){
-                            try {
-                                model = new URI("centaurus.sfb".replace(" ","%20"));
-                            } catch (URISyntaxException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                        else if(marker.getTitle().equals("convention")){
-                            try {
-                                model = new URI("convention.sfb".replace(" ","%20"));
-                            } catch (URISyntaxException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                        else if(marker.getTitle().equals("faisalmosque")){
-                            try {
-                                model = new URI("faisalmosque.sfb".replace(" ","%20"));
-                            } catch (URISyntaxException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                        else if(marker.getTitle().equals("library")){
-                            try {
-                                model = new URI("library.sfb".replace(" ","%20"));
-                            } catch (URISyntaxException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                        else if(marker.getTitle().equals("monument")){
-                            try {
-                                model = new URI("monument.sfb".replace(" ","%20"));
-                            } catch (URISyntaxException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                        else if(marker.getTitle().equals("parliment")){
-                            try {
-                                model = new URI("parliment.sfb".replace(" ","%20"));
-                            } catch (URISyntaxException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                        else if(marker.getTitle().equals("serena")){
-                            try {
-                                model = new URI("serena.sfb".replace(" ","%20"));
-                            } catch (URISyntaxException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                        else {
+
+
+
+
+//                        if(marker.getTitle().equals("NUST SEECS")){
+//                            try {
+//                                model = new URI("seecs.sfb".replace(" ","%20"));
+//                            } catch (URISyntaxException e) {
+//                                e.printStackTrace();
+//                            }
+//                        }
+//                        else if(marker.getTitle().equals("NUST Masjid")){
+//                            try {
+//                                model = new URI("nustmosque.sfb".replace(" ","%20"));
+//                            } catch (URISyntaxException e) {
+//                                e.printStackTrace();
+//                            }
+//                        }
+//                        else if(marker.getTitle().equals("NUST Gate 1")){
+//                            try {
+//                                model = new URI("nustgateten.sfb".replace(" ","%20"));
+//                            } catch (URISyntaxException e) {
+//                                e.printStackTrace();
+//                            }
+//                        }
+//                        else if(marker.getTitle().equals("NUST Gate 3")){
+//                            try {
+//                                model = new URI("nustgatethree.sfb".replace(" ","%20"));
+//                            } catch (URISyntaxException e) {
+//                                e.printStackTrace();
+//                            }
+//                        }
+//                        else if(marker.getTitle().equals("NUST NICE")){
+//                            try {
+//                                model = new URI("nice.sfb".replace(" ","%20"));
+//                            } catch (URISyntaxException e) {
+//                                e.printStackTrace();
+//                            }
+//                        }
+//                        else if(marker.getTitle().equals("centaurus")){
+//                            try {
+//                                model = new URI("centaurus.sfb".replace(" ","%20"));
+//                            } catch (URISyntaxException e) {
+//                                e.printStackTrace();
+//                            }
+//                        }
+//                        else if(marker.getTitle().equals("convention")){
+//                            try {
+//                                model = new URI("convention.sfb".replace(" ","%20"));
+//                            } catch (URISyntaxException e) {
+//                                e.printStackTrace();
+//                            }
+//                        }
+//                        else if(marker.getTitle().equals("faisalmosque")){
+//                            try {
+//                                model = new URI("faisalmosque.sfb".replace(" ","%20"));
+//                            } catch (URISyntaxException e) {
+//                                e.printStackTrace();
+//                            }
+//                        }
+//                        else if(marker.getTitle().equals("library")){
+//                            try {
+//                                model = new URI("library.sfb".replace(" ","%20"));
+//                            } catch (URISyntaxException e) {
+//                                e.printStackTrace();
+//                            }
+//                        }
+//                        else if(marker.getTitle().equals("monument")){
+//                            try {
+//                                model = new URI("monument.sfb".replace(" ","%20"));
+//                            } catch (URISyntaxException e) {
+//                                e.printStackTrace();
+//                            }
+//                        }
+//                        else if(marker.getTitle().equals("parliment")){
+//                            try {
+//                                model = new URI("parliment.sfb".replace(" ","%20"));
+//                            } catch (URISyntaxException e) {
+//                                e.printStackTrace();
+//                            }
+//                        }
+//                        else if(marker.getTitle().equals("serena")){
+//                            try {
+//                                model = new URI("serena.sfb".replace(" ","%20"));
+//                            } catch (URISyntaxException e) {
+//                                e.printStackTrace();
+//                            }
+//                        }
+                        if(model == null) {
                             Places places = getPlacesFromList(marker.getTitle());
                             if (places == null) {
                                 return false;
@@ -756,6 +782,7 @@ public class MapsActivity extends FragmentActivity implements
                                 fragmentTransaction.commit();
                             }
                         }
+
                         if(model != null) {
                             ModelSceneViewRenderFragment modelSceneViewRenderFragment = ModelSceneViewRenderFragment.newInstance(model);
                             FragmentManager fragmentManager = getSupportFragmentManager();
@@ -932,9 +959,9 @@ public class MapsActivity extends FragmentActivity implements
             //showLoadingMessage();
         }
 
-        if(getIntent().getStringExtra("navigate") != null){
+        if(getIntent().getStringExtra("navigate")!=null){
 
-            Toast.makeText(getApplicationContext(), "user wants to navigate to " + getIntent().getStringExtra("navigate"), Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "user wants to navigate to " + modelsTitles[getIntent().getIntExtra("navigateToModelNumber", 0) - 1], Toast.LENGTH_LONG).show();
             finish();
 
         }
@@ -1588,99 +1615,105 @@ public class MapsActivity extends FragmentActivity implements
                 });
     }
 
-    // TODO: Add new markers in the following function
+    // TODO: automate marker addition
 
     private void setBuildingModelMarker(){
+
         Icon icon = iconFactory.fromResource( R.drawable.icons_3d_model_marker_48);
+        for (int i = 0; i < 12; i++){
+            markerTypeArrayList.add(new MarkerType(mapboxMap.addMarker(new MarkerOptions().position(modelCoordinates[i]).title(modelsTitles[i]).icon(icon)) , "3D_Model_Marker"));
+        }
 
-        Marker seecsMarker = mapboxMap.addMarker(
-                new MarkerOptions()
-                        .position(new LatLng(33.64284793989045,72.99053166073543))
-                        .title("NUST SEECS")
-                        .icon(icon)
-        );
-        markerTypeArrayList.add(new MarkerType(seecsMarker,"3D_Model_Marker"));
-
-        Marker masjidMarker = mapboxMap.addMarker(
-                new MarkerOptions()
-                        .position(new LatLng(33.643992,72.985466))
-                        .title("NUST Masjid")
-                        .icon(icon)
-        );
-        markerTypeArrayList.add(new MarkerType(masjidMarker,"3D_Model_Marker"));
-
-        Marker gate10Marker = mapboxMap.addMarker(
-                new MarkerOptions()
-                        .position(new LatLng(33.649184,72.999722))
-                        .title("NUST Gate 1")
-                        .icon(icon)
-        );
-        markerTypeArrayList.add(new MarkerType(gate10Marker,"3D_Model_Marker"));
-
-        Marker gate2Marker = mapboxMap.addMarker(
-                new MarkerOptions()
-                        .position(new LatLng(33.64609 ,72.980647))
-                        .title("NUST Gate 3")
-                        .icon(icon)
-        );
-        markerTypeArrayList.add(new MarkerType(gate2Marker,"3D_Model_Marker"));
-
-        Marker niceMarker = mapboxMap.addMarker(
-                new MarkerOptions()
-                        .position(new LatLng(33.640538  ,72.984592))
-                        .title("NUST NICE")
-                        .icon(icon)
-        );
-        markerTypeArrayList.add(new MarkerType(niceMarker,"3D_Model_Marker"));
-
-        Marker centaurusMarker = mapboxMap.addMarker(
-                new MarkerOptions().position(new LatLng(33.7077,73.0501))
-                .title("centaurus")
-                .icon(icon)
-        );
-        markerTypeArrayList.add(new MarkerType(centaurusMarker, "3D_Model_Marker"));
-
-        Marker conventionMarker = mapboxMap.addMarker(
-                new MarkerOptions().position(new LatLng(33.7182,73.1055))
-                        .title("convention")
-                        .icon(icon)
-        );
-        markerTypeArrayList.add(new MarkerType(conventionMarker, "3D_Model_Marker"));
-
-        Marker faisalmosqueMarker = mapboxMap.addMarker(
-                new MarkerOptions().position(new LatLng(33.7299,73.0383))
-                        .title("faisalmosque")
-                        .icon(icon)
-        );
-        markerTypeArrayList.add(new MarkerType(faisalmosqueMarker, "3D_Model_Marker"));
-
-        Marker libraryMarker = mapboxMap.addMarker(
-                new MarkerOptions().position(new LatLng(33.6421,72.9923))
-                        .title("library")
-                        .icon(icon)
-        );
-        markerTypeArrayList.add(new MarkerType(libraryMarker, "3D_Model_Marker"));
-
-        Marker monumentMarker = mapboxMap.addMarker(
-                new MarkerOptions().position(new LatLng(33.6931,73.0689))
-                        .title("monument")
-                        .icon(icon)
-        );
-        markerTypeArrayList.add(new MarkerType(monumentMarker, "3D_Model_Marker"));
-
-        Marker parlimentMarker = mapboxMap.addMarker(
-                new MarkerOptions().position(new LatLng(33.7302,73.0971))
-                        .title("parliment")
-                        .icon(icon)
-        );
-        markerTypeArrayList.add(new MarkerType(parlimentMarker, "3D_Model_Marker"));
-
-        Marker serenaMarker = mapboxMap.addMarker(
-                new MarkerOptions().position(new LatLng(33.7153,73.1020))
-                        .title("serena")
-                        .icon(icon)
-        );
-        markerTypeArrayList.add(new MarkerType(serenaMarker, "3D_Model_Marker"));
+//
+//
+//        Marker seecsMarker = mapboxMap.addMarker(
+//                new MarkerOptions()
+//                        .position(new LatLng(33.64284793989045,72.99053166073543))
+//                        .title("NUST SEECS")
+//                        .icon(icon)
+//        );
+//        markerTypeArrayList.add(new MarkerType(seecsMarker,"3D_Model_Marker"));
+//
+//        Marker masjidMarker = mapboxMap.addMarker(
+//                new MarkerOptions()
+//                        .position(new LatLng(33.643992,72.985466))
+//                        .title("NUST Masjid")
+//                        .icon(icon)
+//        );
+//        markerTypeArrayList.add(new MarkerType(masjidMarker,"3D_Model_Marker"));
+//
+//        Marker gate10Marker = mapboxMap.addMarker(
+//                new MarkerOptions()
+//                        .position(new LatLng(33.649184,72.999722))
+//                        .title("NUST Gate 1")
+//                        .icon(icon)
+//        );
+//        markerTypeArrayList.add(new MarkerType(gate10Marker,"3D_Model_Marker"));
+//
+//        Marker gate2Marker = mapboxMap.addMarker(
+//                new MarkerOptions()
+//                        .position(new LatLng(33.64609 ,72.980647))
+//                        .title("NUST Gate 3")
+//                        .icon(icon)
+//        );
+//        markerTypeArrayList.add(new MarkerType(gate2Marker,"3D_Model_Marker"));
+//
+//        Marker niceMarker = mapboxMap.addMarker(
+//                new MarkerOptions()
+//                        .position(new LatLng(33.640538  ,72.984592))
+//                        .title("NUST NICE")
+//                        .icon(icon)
+//        );
+//        markerTypeArrayList.add(new MarkerType(niceMarker,"3D_Model_Marker"));
+//
+//        Marker centaurusMarker = mapboxMap.addMarker(
+//                new MarkerOptions().position(new LatLng(33.7077,73.0501))
+//                .title("centaurus")
+//                .icon(icon)
+//        );
+//        markerTypeArrayList.add(new MarkerType(centaurusMarker, "3D_Model_Marker"));
+//
+//        Marker conventionMarker = mapboxMap.addMarker(
+//                new MarkerOptions().position(new LatLng(33.7182,73.1055))
+//                        .title("convention")
+//                        .icon(icon)
+//        );
+//        markerTypeArrayList.add(new MarkerType(conventionMarker, "3D_Model_Marker"));
+//
+//        Marker faisalmosqueMarker = mapboxMap.addMarker(
+//                new MarkerOptions().position(new LatLng(33.7299,73.0383))
+//                        .title("faisalmosque")
+//                        .icon(icon)
+//        );
+//        markerTypeArrayList.add(new MarkerType(faisalmosqueMarker, "3D_Model_Marker"));
+//
+//        Marker libraryMarker = mapboxMap.addMarker(
+//                new MarkerOptions().position(new LatLng(33.6421,72.9923))
+//                        .title("library")
+//                        .icon(icon)
+//        );
+//        markerTypeArrayList.add(new MarkerType(libraryMarker, "3D_Model_Marker"));
+//
+//        Marker monumentMarker = mapboxMap.addMarker(
+//                new MarkerOptions().position(new LatLng(33.6931,73.0689))
+//                        .title("monument")
+//                        .icon(icon)
+//        );
+//        markerTypeArrayList.add(new MarkerType(monumentMarker, "3D_Model_Marker"));
+//
+//        Marker parlimentMarker = mapboxMap.addMarker(
+//                new MarkerOptions().position(new LatLng(33.7302,73.0971))
+//                        .title("parliment")
+//                        .icon(icon)
+//        );
+//        markerTypeArrayList.add(new MarkerType(parlimentMarker, "3D_Model_Marker"));
+//
+//        Marker serenaMarker = mapboxMap.addMarker(
+//                new MarkerOptions().position(new LatLng(33.7153,73.1020))
+//                        .title("serena")
+//                        .icon(icon)
+//        );
+//        markerTypeArrayList.add(new MarkerType(serenaMarker, "3D_Model_Marker"));
 
     }
 

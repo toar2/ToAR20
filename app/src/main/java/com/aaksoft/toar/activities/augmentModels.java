@@ -548,7 +548,8 @@ public class augmentModels extends AppCompatActivity {
             public void onClick(View view){
 
                 Intent navigateToLocationIntent = new Intent(getApplicationContext(), MapsActivity.class);
-                navigateToLocationIntent.putExtra("navigate", modelsNames[selected-1]);
+                navigateToLocationIntent.putExtra("navigate", "yes");
+                navigateToLocationIntent.putExtra("navigateToModelNumber", selected);
                 startActivity(navigateToLocationIntent);
 
 
