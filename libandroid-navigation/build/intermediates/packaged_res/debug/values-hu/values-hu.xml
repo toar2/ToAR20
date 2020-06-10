@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="numberOfDays">
+        <item quantity="one">nap</item>
+        <item quantity="other">nap</item>
+    </plurals>
+    <string name="channel_name">Navigációs értesítések</string>
+    <string name="end_navigation">Navigáció vége</string>
+    <string name="feet">láb</string>
+    <string name="hr">óra</string>
+    <string name="kilometers">km</string>
+    <string name="meters">m</string>
+    <string name="miles">mérföld</string>
+    <string name="min">perc</string>
+    <string name="notification_arrival_time_format">Érkezés: %s</string>
+</resources>

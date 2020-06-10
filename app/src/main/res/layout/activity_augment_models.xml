@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/screen_container2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.MapsActivity">
+
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        tools:context=".activities.augmentModels">
+
+        <fragment
+            android:id="@+id/sceneform_ux_fragment"
+            android:name="com.google.ar.sceneform.ux.ArFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="106dp">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/serena"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/serena" />
+
+
+                <ImageView
+                    android:id="@+id/centaurus"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/centaurus" />
+
+                <ImageView
+                    android:id="@+id/faisalmosque"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/faisalmosque" />
+
+                <ImageView
+                    android:id="@+id/monument"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/monument" />
+
+                <ImageView
+                    android:id="@+id/nustlibrary"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/nustlibrary" />
+
+                <ImageView
+                    android:id="@+id/convention"
+                    android:layout_width="109dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/convention" />
+
+                <ImageView
+                    android:id="@+id/parliment"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/parliment" />
+
+                <ImageView
+                    android:id="@+id/nice"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/nice" />
+
+                <ImageView
+                    android:id="@+id/nustgatethree"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/nustgatethree" />
+
+
+                <ImageView
+                    android:id="@+id/nustgateten"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/nustgateten" />
+
+                <ImageView
+                    android:id="@+id/nustmosque"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/nustmosque" />
+
+                <ImageView
+                    android:id="@+id/seecs"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/seecs" />
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <LinearLayout
+            android:id="@+id/optionsPanel"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_gravity="bottom"
+            android:gravity="bottom|left"
+            android:orientation="horizontal"
+            android:visibility="invisible">
+
+            <Button
+                android:id="@+id/infoButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="info" />
+
+
+            <Button
+                android:id="@+id/picturebutton"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+
+                android:layout_weight="1"
+                android:background="@android:drawable/ic_menu_camera"
+
+
+                />
+
+            <Button
+                android:id="@+id/navigateButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="navigate" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</RelativeLayout>
+
+

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.LocationMarkerListFragment"
+    android:orientation="horizontal"
+    android:weightSum="1"
+    android:background="@color/application_background_color">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:layout_weight="0.65"
+        >
+        <TextView
+            android:id="@+id/nameListFragmentTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.45"
+            android:textColor="@color/white"
+            android:layout_margin="5dp"/>
+
+        <TextView
+            android:id="@+id/infoListFragmentTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.45"
+            android:text="TextView"
+            android:textColor="@color/white"
+            android:layout_margin="5dp"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.35"
+        android:layout_marginLeft="5dp">
+        <Button
+            android:id="@+id/showDetailsFragmentListButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/icons_info_48_white"
+            android:layout_margin="5dp"/>
+
+        <Button
+            android:id="@+id/navigateListFragmentButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/icons_find_route_48_white"
+            android:layout_margin="5dp"/>
+    </LinearLayout>
+
+
+</LinearLayout>

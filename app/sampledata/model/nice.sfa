@@ -1,0 +1,683 @@
+{
+  materials: [
+    {
+      name: '_auto_2',
+      parameters: [
+        {
+          baseColor: null,
+        },
+        {
+          baseColorTint: [
+            0.376471,
+            0.376471,
+            0.376471,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: '_auto_3',
+      parameters: [
+        {
+          baseColor: null,
+        },
+        {
+          baseColorTint: [
+            0.82745100000000005,
+            0.74117599999999995,
+            0.56470600000000004,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: '_auto_4',
+      parameters: [
+        {
+          baseColor: null,
+        },
+        {
+          baseColorTint: [
+            0.20000000000000001,
+            0.13333300000000001,
+            0.11372500000000001,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: '_auto_5',
+      parameters: [
+        {
+          baseColor: null,
+        },
+        {
+          baseColorTint: [
+            0.66274500000000003,
+            0.66274500000000003,
+            0.66274500000000003,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: '_auto_6',
+      parameters: [
+        {
+          baseColor: null,
+        },
+        {
+          baseColorTint: [
+            0.31764700000000001,
+            0.31764700000000001,
+            0.31764700000000001,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: '_auto_8',
+      parameters: [
+        {
+          baseColor: null,
+        },
+        {
+          baseColorTint: [
+            0.141176,
+            0.18431400000000001,
+            0.25490200000000002,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: '_auto_9',
+      parameters: [
+        {
+          baseColor: null,
+        },
+        {
+          baseColorTint: [
+            0.13333300000000001,
+            0.13333300000000001,
+            0.13333300000000001,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: '_auto_11',
+      parameters: [
+        {
+          baseColor: null,
+        },
+        {
+          baseColorTint: [
+            0.40000000000000002,
+            0.219608,
+            0.156863,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: '_auto_12',
+      parameters: [
+        {
+          baseColor: null,
+        },
+        {
+          baseColorTint: [
+            0.24313699999999999,
+            0.35686299999999999,
+            0.019608,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: 0.50196099999999999,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'Beadboard',
+      parameters: [
+        {
+          baseColor: 'Beadboard',
+        },
+        {
+          baseColorTint: [
+            0.85490200000000005,
+            0.56078399999999995,
+            0.352941,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: '_auto_',
+      parameters: [
+        {
+          baseColor: null,
+        },
+        {
+          baseColorTint: [
+            0.80000000000000004,
+            0.71764700000000003,
+            0.47450999999999999,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'FrontColor',
+      parameters: [
+        {
+          baseColor: null,
+        },
+        {
+          baseColorTint: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'M_0012_Bisque',
+      parameters: [
+        {
+          baseColor: null,
+        },
+        {
+          baseColorTint: [
+            1,
+            0.89411799999999997,
+            0.76862699999999995,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: '_auto_14',
+      parameters: [
+        {
+          baseColor: null,
+        },
+        {
+          baseColorTint: [
+            0.80000000000000004,
+            0.75686299999999995,
+            0.63921600000000001,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: '_auto_18',
+      parameters: [
+        {
+          baseColor: null,
+        },
+        {
+          baseColorTint: [
+            0.59999999999999998,
+            0.235294,
+            0.235294,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: '_auto_20',
+      parameters: [
+        {
+          baseColor: '_auto_20',
+        },
+        {
+          baseColorTint: [
+            0.59215700000000004,
+            0.33725500000000003,
+            0.16078400000000001,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: '_auto_21',
+      parameters: [
+        {
+          baseColor: '_auto_21',
+        },
+        {
+          baseColorTint: [
+            0.60392199999999996,
+            0.584314,
+            0.58039200000000002,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: '_auto_22',
+      parameters: [
+        {
+          baseColor: '_auto_22',
+        },
+        {
+          baseColorTint: [
+            0.48627500000000001,
+            0.54117599999999999,
+            0.70980399999999999,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: 0.52000000000000002,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: '_auto_24',
+      parameters: [
+        {
+          baseColor: '_auto_24',
+        },
+        {
+          baseColorTint: [
+            0.75294099999999997,
+            0.75294099999999997,
+            0.75294099999999997,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: '_auto_17',
+      parameters: [
+        {
+          baseColor: '_auto_17',
+        },
+        {
+          baseColorTint: [
+            0.027451,
+            0.78823500000000002,
+            0.94117600000000001,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: 0.47999999999999998,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: '_auto_23',
+      parameters: [
+        {
+          baseColor: null,
+        },
+        {
+          baseColorTint: [
+            0.50196099999999999,
+            0.50196099999999999,
+            0.50196099999999999,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: 0.50196099999999999,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: '_auto_28',
+      parameters: [
+        {
+          baseColor: null,
+        },
+        {
+          baseColorTint: [
+            1,
+            1,
+            0.59999999999999998,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: '_auto_32',
+      parameters: [
+        {
+          baseColor: '_auto_32',
+        },
+        {
+          baseColorTint: [
+            0.56078399999999995,
+            0.43137300000000001,
+            0.388235,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: '_auto_36',
+      parameters: [
+        {
+          baseColor: '_auto_36',
+        },
+        {
+          baseColorTint: [
+            0.60392199999999996,
+            0.584314,
+            0.58039200000000002,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+    ],
+    collision: {},
+    file: 'sampledata/model/nice.obj',
+    name: 'nice',
+    recenter: 'root',
+    scale: 0.0020539999999999998,
+  },
+  samplers: [
+    {
+      file: 'sampledata/model\\nice\\_auto_32.jpg',
+      name: '_auto_32',
+      pipeline_name: 'nice/_auto_32.jpg',
+    },
+    {
+      file: 'sampledata/model\\nice\\_auto_21.jpg',
+      name: '_auto_21',
+      pipeline_name: 'nice/_auto_21.jpg',
+    },
+    {
+      file: 'sampledata/model\\nice\\Beadboard.jpg',
+      name: 'Beadboard',
+      pipeline_name: 'nice/Beadboard.jpg',
+    },
+    {
+      file: 'sampledata/model\\nice\\_auto_20.jpg',
+      name: '_auto_20',
+      pipeline_name: 'nice/_auto_20.jpg',
+    },
+    {
+      file: 'sampledata/model\\nice\\_auto_22.jpg',
+      name: '_auto_22',
+      pipeline_name: 'nice/_auto_22.jpg',
+    },
+    {
+      file: 'sampledata/model\\nice\\_auto_24.jpg',
+      name: '_auto_24',
+      pipeline_name: 'nice/_auto_24.jpg',
+    },
+    {
+      file: 'sampledata/model\\nice\\_auto_17.jpg',
+      name: '_auto_17',
+      pipeline_name: 'nice/_auto_17.jpg',
+    },
+    {
+      file: 'sampledata/model\\nice\\_auto_36.jpg',
+      name: '_auto_36',
+      pipeline_name: 'nice/_auto_36.jpg',
+    },
+  ],
+  version: '0.54:2',
+}

@@ -1,0 +1,152 @@
+{
+   bound_relative_root: {
+      x: 0.5,
+      y: 0,
+      z: 0.5,
+   },
+   materials: [
+      {
+         name: "FrontColor",
+         parameters: [
+            {
+               baseColor: null,
+            },
+            {
+               baseColorTint: [
+                  1,
+                  1,
+                  1,
+                  1,
+               ],
+            },
+            {
+               metallic: 0,
+            },
+            {
+               roughness: 1,
+            },
+            {
+               opacity: null,
+            },
+         ],
+         source: "build/sceneform_sdk/default_materials/obj_material.sfm",
+      },
+      {
+         name: "Color_009",
+         parameters: [
+            {
+               baseColor: null,
+            },
+            {
+               baseColorTint: [
+                  1,
+                  1,
+                  1,
+                  1,
+               ],
+            },
+            {
+               metallic: 0,
+            },
+            {
+               roughness: 1,
+            },
+            {
+               opacity: null,
+            },
+         ],
+         source: "build/sceneform_sdk/default_materials/obj_material.sfm",
+      },
+      {
+         name: "Color_M03",
+         parameters: [
+            {
+               baseColor: null,
+            },
+            {
+               baseColorTint: [
+                  0.66666700000000001,
+                  0.66666700000000001,
+                  0.66666700000000001,
+                  1,
+               ],
+            },
+            {
+               metallic: 0,
+            },
+            {
+               roughness: 1,
+            },
+            {
+               opacity: null,
+            },
+         ],
+         source: "build/sceneform_sdk/default_materials/obj_material.sfm",
+      },
+      {
+         name: "Color_008",
+         parameters: [
+            {
+               baseColor: null,
+            },
+            {
+               baseColorTint: [
+                  0.117647,
+                  0.117647,
+                  0.117647,
+                  1,
+               ],
+            },
+            {
+               metallic: 0,
+            },
+            {
+               roughness: 1,
+            },
+            {
+               opacity: null,
+            },
+         ],
+         source: "build/sceneform_sdk/default_materials/obj_material.sfm",
+      },
+      {
+         name: "Color_E02",
+         parameters: [
+            {
+               baseColor: null,
+            },
+            {
+               baseColorTint: [
+                  1,
+                  1,
+                  0.59999999999999998,
+                  1,
+               ],
+            },
+            {
+               metallic: 0,
+            },
+            {
+               roughness: 1,
+            },
+            {
+               opacity: null,
+            },
+         ],
+         source: "build/sceneform_sdk/default_materials/obj_material.sfm",
+      },
+   ],
+   model: {
+      attributes: [
+         "Position",
+         "TexCoord",
+         "Orientation",
+      ],
+      collision: {},
+      file: "sampledata/model/faisalmosque.obj",
+      name: "faisalmosque",
+      recenter: "root",
+      scale: 0.00065200000000000002,
+   },
+   version: "0.52:1",
+}

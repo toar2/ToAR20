@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragments.LocationMarkerDetailsDescriptionFragment"
+    android:background="@color/application_background_color">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <Button
+            android:id="@+id/navigateButtonDetailFragment"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/icons_find_route_48_white"
+            />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Location Details"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"/>
+
+
+        <Button
+            android:id="@+id/backButtonDetailFragment"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/icons_back_48_white"
+            android:layout_marginTop="@dimen/back_button_margin_top"
+            android:layout_marginEnd="@dimen/back_button_margin_end"
+            />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.45"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/placeNameDetailFragment"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="3dp"
+            android:layout_weight="0.3"
+            android:text="Resturant Name"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:id="@+id/placeVicinityDetailFragment"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2"
+            android:text="Resturant Vicinity"
+            android:textAlignment="center"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:id="@+id/placeRatingDetailFragment"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2"
+            android:text="Rating: 4.0"
+            android:textAlignment="center"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:id="@+id/placeTypeDetailFragment"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2"
+            android:text="TextView"
+            android:textAlignment="center"
+            android:textColor="@color/white"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.45"
+        android:orientation="vertical">
+    </LinearLayout>
+
+</LinearLayout>

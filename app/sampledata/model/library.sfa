@@ -1,0 +1,257 @@
+{
+  materials: [
+    {
+      name: 'Translucent_Glass_Gray',
+      parameters: [
+        {
+          baseColor: null,
+        },
+        {
+          baseColorTint: [
+            0.14902000000000001,
+            0.14902000000000001,
+            0.14902000000000001,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: 0.75,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'SMS_9732_copy_d',
+      parameters: [
+        {
+          baseColor: 'SMS_9732_copy_d',
+        },
+        {
+          baseColorTint: [
+            0.596078,
+            0.52156899999999995,
+            0.46274500000000002,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'Slate_Light_Tile',
+      parameters: [
+        {
+          baseColor: 'Slate_Light_Tile',
+        },
+        {
+          baseColorTint: [
+            0.439216,
+            0.231373,
+            0.18823500000000001,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'Metal_Corrugated_Shiny',
+      parameters: [
+        {
+          baseColor: 'Metal_Corrugated_Shiny',
+        },
+        {
+          baseColorTint: [
+            0.466667,
+            0.466667,
+            0.466667,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'Metal_Seamed',
+      parameters: [
+        {
+          baseColor: 'Metal_Seamed',
+        },
+        {
+          baseColorTint: [
+            0.235294,
+            0.23921600000000001,
+            0.231373,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'Brick_Rough_Dark',
+      parameters: [
+        {
+          baseColor: 'Brick_Rough_Dark',
+        },
+        {
+          baseColorTint: [
+            0.72548999999999997,
+            0.443137,
+            0.33333299999999999,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: '_1',
+      parameters: [
+        {
+          baseColor: '_1',
+        },
+        {
+          baseColorTint: [
+            0.61960800000000005,
+            0.42352899999999999,
+            0.33333299999999999,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'FrontColor',
+      parameters: [
+        {
+          baseColor: null,
+        },
+        {
+          baseColorTint: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+    ],
+    collision: {},
+    file: 'sampledata/model/library.obj',
+    name: 'library',
+    recenter: 'root',
+    scale: 0.00046700000000000002,
+  },
+  samplers: [
+    {
+      file: 'sampledata/model\\library\\_1.jpg',
+      name: '_1',
+      pipeline_name: 'library/_1.jpg',
+    },
+    {
+      file: 'sampledata/model\\library\\Brick_Rough_Dark.jpg',
+      name: 'Brick_Rough_Dark',
+      pipeline_name: 'library/Brick_Rough_Dark.jpg',
+    },
+    {
+      file: 'sampledata/model\\library\\SMS_9732_copy_d.jpg',
+      name: 'SMS_9732_copy_d',
+      pipeline_name: 'library/SMS_9732_copy_d.jpg',
+    },
+    {
+      file: 'sampledata/model\\library\\Slate_Light_Tile.jpg',
+      name: 'Slate_Light_Tile',
+      pipeline_name: 'library/Slate_Light_Tile.jpg',
+    },
+    {
+      file: 'sampledata/model\\library\\Metal_Corrugated_Shiny.jpg',
+      name: 'Metal_Corrugated_Shiny',
+      pipeline_name: 'library/Metal_Corrugated_Shiny.jpg',
+    },
+    {
+      file: 'sampledata/model\\library\\Metal_Seamed.jpg',
+      name: 'Metal_Seamed',
+      pipeline_name: 'library/Metal_Seamed.jpg',
+    },
+  ],
+  version: '0.54:2',
+}

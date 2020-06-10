@@ -1,0 +1,734 @@
+{
+  materials: [
+    {
+      name: 'Color_C09',
+      parameters: [
+        {
+          baseColor: null,
+        },
+        {
+          baseColorTint: [
+            0.87843099999999996,
+            0.78823500000000002,
+            0.58039200000000002,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: '_Color_001_1',
+      parameters: [
+        {
+          baseColor: '_Color_001_1',
+        },
+        {
+          baseColorTint: [
+            0.92941200000000002,
+            0.83137300000000003,
+            0.611765,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'FrontColor',
+      parameters: [
+        {
+          baseColor: null,
+        },
+        {
+          baseColorTint: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'Texture1_1',
+      parameters: [
+        {
+          baseColor: null,
+        },
+        {
+          baseColorTint: [
+            0.88627500000000003,
+            0.63137299999999996,
+            0.41960799999999998,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: '_Color_001_2',
+      parameters: [
+        {
+          baseColor: '_Color_001_2',
+        },
+        {
+          baseColorTint: [
+            0.31764700000000001,
+            0.21568599999999999,
+            0.17254900000000001,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'Translucent_Glass_Aqua',
+      parameters: [
+        {
+          baseColor: null,
+        },
+        {
+          baseColorTint: [
+            0.28235300000000002,
+            0.819608,
+            0.80000000000000004,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: 0.5,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'Metal_Aluminum_Anodized',
+      parameters: [
+        {
+          baseColor: 'Metal_Aluminum_Anodized',
+        },
+        {
+          baseColorTint: [
+            0.67843100000000001,
+            0.56470600000000004,
+            0.45097999999999999,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'Translucent_Glass_Green_Dark',
+      parameters: [
+        {
+          baseColor: null,
+        },
+        {
+          baseColorTint: [
+            0.25490200000000002,
+            0.478431,
+            0.32549,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: 0.42999999999999999,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'Color_009',
+      parameters: [
+        {
+          baseColor: null,
+        },
+        {
+          baseColorTint: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'Color_002',
+      parameters: [
+        {
+          baseColor: 'Color_002',
+        },
+        {
+          baseColorTint: [
+            0.45490199999999997,
+            0.55294100000000002,
+            0.21568599999999999,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: '_Metal_Aluminum_Anodized_1',
+      parameters: [
+        {
+          baseColor: '_Metal_Aluminum_Anodized_1',
+        },
+        {
+          baseColorTint: [
+            0.792157,
+            0.819608,
+            0.85882400000000003,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: '_LightGray_',
+      parameters: [
+        {
+          baseColor: null,
+        },
+        {
+          baseColorTint: [
+            0.66274500000000003,
+            0.66274500000000003,
+            0.66274500000000003,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: '_Ivory_',
+      parameters: [
+        {
+          baseColor: null,
+        },
+        {
+          baseColorTint: [
+            1,
+            1,
+            0.94117600000000001,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'Metal_Seamed',
+      parameters: [
+        {
+          baseColor: 'Metal_Seamed',
+        },
+        {
+          baseColorTint: [
+            0.46274500000000002,
+            0.466667,
+            0.45097999999999999,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'Metal_Rough',
+      parameters: [
+        {
+          baseColor: 'Metal_Rough',
+        },
+        {
+          baseColorTint: [
+            0.59999999999999998,
+            0.61568599999999996,
+            0.62745099999999998,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'M_0135_DarkGray',
+      parameters: [
+        {
+          baseColor: null,
+        },
+        {
+          baseColorTint: [
+            0.31764700000000001,
+            0.31764700000000001,
+            0.31764700000000001,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'Metal_Brushed',
+      parameters: [
+        {
+          baseColor: 'Metal_Brushed',
+        },
+        {
+          baseColorTint: [
+            0.51372499999999999,
+            0.54901999999999995,
+            0.60784300000000002,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'Translucent_Glass_Tinted',
+      parameters: [
+        {
+          baseColor: 'Translucent_Glass_Tinted',
+        },
+        {
+          baseColorTint: [
+            0.611765,
+            0.92156899999999997,
+            0.98431400000000002,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: 0.71999999999999997,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: '_Ivory_1',
+      parameters: [
+        {
+          baseColor: null,
+        },
+        {
+          baseColorTint: [
+            0.96078399999999997,
+            0.96078399999999997,
+            0.96078399999999997,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: 0.10000000000000001,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'M_0010_Snow',
+      parameters: [
+        {
+          baseColor: 'M_0010_Snow',
+        },
+        {
+          baseColorTint: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'Color_G13',
+      parameters: [
+        {
+          baseColor: null,
+        },
+        {
+          baseColorTint: [
+            0.258824,
+            0.64705900000000005,
+            0.258824,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: 0.93000000000000005,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: '_Color_001__1',
+      parameters: [
+        {
+          baseColor: '_Color_001__1',
+        },
+        {
+          baseColorTint: [
+            0.65882399999999997,
+            0.45490199999999997,
+            0.403922,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'Color_001',
+      parameters: [
+        {
+          baseColor: 'Color_001',
+        },
+        {
+          baseColorTint: [
+            0.69803899999999997,
+            0.37254900000000002,
+            0.30196099999999998,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'Wood_Cherry_Original',
+      parameters: [
+        {
+          baseColor: 'Wood_Cherry_Original',
+        },
+        {
+          baseColorTint: [
+            0.45882400000000001,
+            0.258824,
+            0.12548999999999999,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'Translucent_Glass_Blue',
+      parameters: [
+        {
+          baseColor: null,
+        },
+        {
+          baseColorTint: [
+            0.48627500000000001,
+            0.74902000000000002,
+            1,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: 0.080000000000000002,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+    ],
+    collision: {},
+    file: 'sampledata/model/seecs.obj',
+    name: 'seecs',
+    recenter: 'root',
+    scale: 0.0010510000000000001,
+  },
+  samplers: [
+    {
+      file: 'sampledata/model\\SEECSv1.2\\_Color_001_1.jpg',
+      name: '_Color_001_1',
+      pipeline_name: 'SEECSv1.2/_Color_001_1.jpg',
+    },
+    {
+      file: 'sampledata/model\\SEECSv1.2\\Metal_Brushed.jpg',
+      name: 'Metal_Brushed',
+      pipeline_name: 'SEECSv1.2/Metal_Brushed.jpg',
+    },
+    {
+      file: 'sampledata/model\\SEECSv1.2\\Metal_Aluminum_Anodized.jpg',
+      name: 'Metal_Aluminum_Anodized',
+      pipeline_name: 'SEECSv1.2/Metal_Aluminum_Anodized.jpg',
+    },
+    {
+      file: 'sampledata/model\\SEECSv1.2\\_Color_001_2.png',
+      name: '_Color_001_2',
+      pipeline_name: 'SEECSv1.2/_Color_001_2.png',
+    },
+    {
+      file: 'sampledata/model\\SEECSv1.2\\_Metal_Aluminum_Anodized_1.jpg',
+      name: '_Metal_Aluminum_Anodized_1',
+      pipeline_name: 'SEECSv1.2/_Metal_Aluminum_Anodized_1.jpg',
+    },
+    {
+      file: 'sampledata/model\\SEECSv1.2\\Color_002.jpg',
+      name: 'Color_002',
+      pipeline_name: 'SEECSv1.2/Color_002.jpg',
+    },
+    {
+      file: 'sampledata/model\\SEECSv1.2\\Metal_Seamed.jpg',
+      name: 'Metal_Seamed',
+      pipeline_name: 'SEECSv1.2/Metal_Seamed.jpg',
+    },
+    {
+      file: 'sampledata/model\\SEECSv1.2\\Translucent_Glass_Tinted.jpg',
+      name: 'Translucent_Glass_Tinted',
+      pipeline_name: 'SEECSv1.2/Translucent_Glass_Tinted.jpg',
+    },
+    {
+      file: 'sampledata/model\\SEECSv1.2\\_Color_001__1.jpg',
+      name: '_Color_001__1',
+      pipeline_name: 'SEECSv1.2/_Color_001__1.jpg',
+    },
+    {
+      file: 'sampledata/model\\SEECSv1.2\\Metal_Rough.jpg',
+      name: 'Metal_Rough',
+      pipeline_name: 'SEECSv1.2/Metal_Rough.jpg',
+    },
+    {
+      file: 'sampledata/model\\SEECSv1.2\\M_0010_Snow.png',
+      name: 'M_0010_Snow',
+      pipeline_name: 'SEECSv1.2/M_0010_Snow.png',
+    },
+    {
+      file: 'sampledata/model\\SEECSv1.2\\Color_001.jpg',
+      name: 'Color_001',
+      pipeline_name: 'SEECSv1.2/Color_001.jpg',
+    },
+    {
+      file: 'sampledata/model\\SEECSv1.2\\Wood_Cherry_Original.jpg',
+      name: 'Wood_Cherry_Original',
+      pipeline_name: 'SEECSv1.2/Wood_Cherry_Original.jpg',
+    },
+  ],
+  version: '0.54:2',
+}

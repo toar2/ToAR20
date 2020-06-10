@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.NavigationOptionFragment"
+    android:weightSum="1"
+    android:orientation="vertical"
+    android:background="@color/application_background_color">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="@integer/back_button_container_inner_left_weight"
+            android:visibility="invisible"/>
+
+        <Button
+            android:id="@+id/backButtonNavigationOptionFragment"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/icons_back_48_white"
+            android:layout_marginEnd="@dimen/back_button_margin_end"
+            android:layout_marginTop="@dimen/back_button_margin_top"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:text="Navigation Option"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.05"
+            android:text="Select Route Type"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            />
+
+        <Spinner
+            android:id="@+id/spinnerSelectRouteType"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="0.1"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/white"
+            ></Spinner>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"
+        android:orientation="vertical"
+        android:layout_margin="15dp"
+        android:padding="15dp"
+        >
+
+        <Button
+            android:id="@+id/buttonDoneNavigationOption"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:text="Done"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:background="@drawable/button_rounded_corner"
+            android:textColor="@color/button_text_color"
+            android:padding="15dp"/>
+    </LinearLayout>
+
+</LinearLayout>

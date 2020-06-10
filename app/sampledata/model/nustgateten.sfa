@@ -1,0 +1,634 @@
+{
+  materials: [
+    {
+      name: 'M_01',
+      parameters: [
+        {
+          baseColor: 'M_01',
+        },
+        {
+          baseColorTint: [
+            0.54117599999999999,
+            0.56078399999999995,
+            0.56470600000000004,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'Brick_Colored_Blue',
+      parameters: [
+        {
+          baseColor: 'Brick_Colored_Blue',
+        },
+        {
+          baseColorTint: [
+            0.56470600000000004,
+            0.56078399999999995,
+            0.57254899999999997,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'FrontColor',
+      parameters: [
+        {
+          baseColor: null,
+        },
+        {
+          baseColorTint: [
+            0.89019599999999999,
+            0.88235300000000005,
+            0.87058800000000003,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'M_08',
+      parameters: [
+        {
+          baseColor: 'M_08',
+        },
+        {
+          baseColorTint: [
+            0.18431400000000001,
+            0.18431400000000001,
+            0.16078400000000001,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'M_03',
+      parameters: [
+        {
+          baseColor: 'M_03',
+        },
+        {
+          baseColorTint: [
+            0.596078,
+            0.60392199999999996,
+            0.61960800000000005,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'Stone_Masonry_Multi',
+      parameters: [
+        {
+          baseColor: 'Stone_Masonry_Multi',
+        },
+        {
+          baseColorTint: [
+            0.71372500000000005,
+            0.68627499999999997,
+            0.64313699999999996,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'M_04',
+      parameters: [
+        {
+          baseColor: 'M_04',
+        },
+        {
+          baseColorTint: [
+            0.286275,
+            0.33725500000000003,
+            0.34117599999999998,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'wall_tiles_img_5',
+      parameters: [
+        {
+          baseColor: 'wall_tiles_img_5',
+        },
+        {
+          baseColorTint: [
+            0.65490199999999998,
+            0.47450999999999999,
+            0.26666699999999999,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'Google_Earth_Snapshot',
+      parameters: [
+        {
+          baseColor: 'Google_Earth_Snapshot',
+        },
+        {
+          baseColorTint: [
+            0.35686299999999999,
+            0.36470599999999997,
+            0.39215699999999998,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'M_2',
+      parameters: [
+        {
+          baseColor: 'M_2',
+        },
+        {
+          baseColorTint: [
+            0.105882,
+            0.101961,
+            0.121569,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'Brick_Antique_01',
+      parameters: [
+        {
+          baseColor: 'Brick_Antique_01',
+        },
+        {
+          baseColorTint: [
+            0.57647099999999996,
+            0.41176499999999999,
+            0.27843099999999998,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'M_04_1_',
+      parameters: [
+        {
+          baseColor: 'M_04_1_',
+        },
+        {
+          baseColorTint: [
+            0.286275,
+            0.33725500000000003,
+            0.34117599999999998,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'M_04_2_',
+      parameters: [
+        {
+          baseColor: 'M_04_2_',
+        },
+        {
+          baseColorTint: [
+            0.286275,
+            0.33725500000000003,
+            0.34117599999999998,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'M_04_3_',
+      parameters: [
+        {
+          baseColor: 'M_04_3_',
+        },
+        {
+          baseColorTint: [
+            0.286275,
+            0.33725500000000003,
+            0.34117599999999998,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'M_04_4_',
+      parameters: [
+        {
+          baseColor: 'M_04_4_',
+        },
+        {
+          baseColorTint: [
+            0.286275,
+            0.33725500000000003,
+            0.34117599999999998,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'M_68566259_copy_copy',
+      parameters: [
+        {
+          baseColor: 'M_68566259_copy_copy',
+        },
+        {
+          baseColorTint: [
+            0.55294100000000002,
+            0.57647099999999996,
+            0.57647099999999996,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'Brick_Rough_Tan',
+      parameters: [
+        {
+          baseColor: 'Brick_Rough_Tan',
+        },
+        {
+          baseColorTint: [
+            0.156863,
+            0.156863,
+            0.156863,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'IMG_4435',
+      parameters: [
+        {
+          baseColor: 'IMG_4435',
+        },
+        {
+          baseColorTint: [
+            0.764706,
+            0.71764700000000003,
+            0.68235299999999999,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'Fencing_Railing_Metal2',
+      parameters: [
+        {
+          baseColor: 'Fencing_Railing_Metal2',
+        },
+        {
+          baseColorTint: [
+            0.43137300000000001,
+            0.32941199999999998,
+            0.32941199999999998,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'M_1',
+      parameters: [
+        {
+          baseColor: 'M_1',
+        },
+        {
+          baseColorTint: [
+            0.89019599999999999,
+            0.89019599999999999,
+            0.89019599999999999,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+    ],
+    collision: {},
+    file: 'sampledata/model/nustgateten.obj',
+    name: 'nustgateten',
+    recenter: 'root',
+    scale: 0.002826,
+  },
+  samplers: [
+    {
+      file: 'sampledata/model\\NUST Gate 10 model v1.0\\M_04_3_.jpg',
+      name: 'M_04_3_',
+      pipeline_name: 'NUST Gate 10 model v1.0/M_04_3_.jpg',
+    },
+    {
+      file: 'sampledata/model\\NUST Gate 10 model v1.0\\M_01.jpg',
+      name: 'M_01',
+      pipeline_name: 'NUST Gate 10 model v1.0/M_01.jpg',
+    },
+    {
+      file: 'sampledata/model\\NUST Gate 10 model v1.0\\Google_Earth_Snapshot.jpg',
+      name: 'Google_Earth_Snapshot',
+      pipeline_name: 'NUST Gate 10 model v1.0/Google_Earth_Snapshot.jpg',
+    },
+    {
+      file: 'sampledata/model\\NUST Gate 10 model v1.0\\M_03.jpg',
+      name: 'M_03',
+      pipeline_name: 'NUST Gate 10 model v1.0/M_03.jpg',
+    },
+    {
+      file: 'sampledata/model\\NUST Gate 10 model v1.0\\Brick_Colored_Blue.jpg',
+      name: 'Brick_Colored_Blue',
+      pipeline_name: 'NUST Gate 10 model v1.0/Brick_Colored_Blue.jpg',
+    },
+    {
+      file: 'sampledata/model\\NUST Gate 10 model v1.0\\M_08.jpg',
+      name: 'M_08',
+      pipeline_name: 'NUST Gate 10 model v1.0/M_08.jpg',
+    },
+    {
+      file: 'sampledata/model\\NUST Gate 10 model v1.0\\Brick_Antique_01.jpg',
+      name: 'Brick_Antique_01',
+      pipeline_name: 'NUST Gate 10 model v1.0/Brick_Antique_01.jpg',
+    },
+    {
+      file: 'sampledata/model\\NUST Gate 10 model v1.0\\Stone_Masonry_Multi.jpg',
+      name: 'Stone_Masonry_Multi',
+      pipeline_name: 'NUST Gate 10 model v1.0/Stone_Masonry_Multi.jpg',
+    },
+    {
+      file: 'sampledata/model\\NUST Gate 10 model v1.0\\M_04.jpg',
+      name: 'M_04',
+      pipeline_name: 'NUST Gate 10 model v1.0/M_04.jpg',
+    },
+    {
+      file: 'sampledata/model\\NUST Gate 10 model v1.0\\M_2.jpg',
+      name: 'M_2',
+      pipeline_name: 'NUST Gate 10 model v1.0/M_2.jpg',
+    },
+    {
+      file: 'sampledata/model\\NUST Gate 10 model v1.0\\wall_tiles_img_5.jpg',
+      name: 'wall_tiles_img_5',
+      pipeline_name: 'NUST Gate 10 model v1.0/wall_tiles_img_5.jpg',
+    },
+    {
+      file: 'sampledata/model\\NUST Gate 10 model v1.0\\M_04_1_.jpg',
+      name: 'M_04_1_',
+      pipeline_name: 'NUST Gate 10 model v1.0/M_04_1_.jpg',
+    },
+    {
+      file: 'sampledata/model\\NUST Gate 10 model v1.0\\M_04_2_.jpg',
+      name: 'M_04_2_',
+      pipeline_name: 'NUST Gate 10 model v1.0/M_04_2_.jpg',
+    },
+    {
+      file: 'sampledata/model\\NUST Gate 10 model v1.0\\IMG_4435.jpg',
+      name: 'IMG_4435',
+      pipeline_name: 'NUST Gate 10 model v1.0/IMG_4435.jpg',
+    },
+    {
+      file: 'sampledata/model\\NUST Gate 10 model v1.0\\M_04_4_.jpg',
+      name: 'M_04_4_',
+      pipeline_name: 'NUST Gate 10 model v1.0/M_04_4_.jpg',
+    },
+    {
+      file: 'sampledata/model\\NUST Gate 10 model v1.0\\M_68566259_copy_copy.jpg',
+      name: 'M_68566259_copy_copy',
+      pipeline_name: 'NUST Gate 10 model v1.0/M_68566259_copy_copy.jpg',
+    },
+    {
+      file: 'sampledata/model\\NUST Gate 10 model v1.0\\Brick_Rough_Tan.jpg',
+      name: 'Brick_Rough_Tan',
+      pipeline_name: 'NUST Gate 10 model v1.0/Brick_Rough_Tan.jpg',
+    },
+    {
+      file: 'sampledata/model\\NUST Gate 10 model v1.0\\Fencing_Railing_Metal2.png',
+      name: 'Fencing_Railing_Metal2',
+      pipeline_name: 'NUST Gate 10 model v1.0/Fencing_Railing_Metal2.png',
+    },
+    {
+      file: 'sampledata/model\\NUST Gate 10 model v1.0\\M_1.jpg',
+      name: 'M_1',
+      pipeline_name: 'NUST Gate 10 model v1.0/M_1.jpg',
+    },
+  ],
+  version: '0.54:2',
+}

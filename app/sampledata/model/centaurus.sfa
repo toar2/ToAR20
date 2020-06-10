@@ -1,0 +1,501 @@
+{
+  materials: [
+    {
+      name: 'Google_Earth_Snapshot',
+      parameters: [
+        {
+          baseColor: 'Google_Earth_Snapshot',
+        },
+        {
+          baseColorTint: [
+            0.258824,
+            0.258824,
+            0.26666699999999999,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'DSC_0111_3',
+      parameters: [
+        {
+          baseColor: 'DSC_0111_3',
+        },
+        {
+          baseColorTint: [
+            0.44705899999999998,
+            0.49803900000000001,
+            0.49803900000000001,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: 0.93000000000000005,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'black',
+      parameters: [
+        {
+          baseColor: null,
+        },
+        {
+          baseColorTint: [
+            0.63921600000000001,
+            0.63921600000000001,
+            0.63921600000000001,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'Google_Earth_Snapshot4',
+      parameters: [
+        {
+          baseColor: 'Google_Earth_Snapshot4',
+        },
+        {
+          baseColorTint: [
+            0.596078,
+            0.584314,
+            0.60784300000000002,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'Google_Earth_Snapshot3',
+      parameters: [
+        {
+          baseColor: 'Google_Earth_Snapshot3',
+        },
+        {
+          baseColorTint: [
+            0.45490199999999997,
+            0.45097999999999999,
+            0.466667,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: '_Beige_1',
+      parameters: [
+        {
+          baseColor: null,
+        },
+        {
+          baseColorTint: [
+            0.70980399999999999,
+            0.63529400000000003,
+            0.48235299999999998,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'Color_B24',
+      parameters: [
+        {
+          baseColor: null,
+        },
+        {
+          baseColorTint: [
+            0.20000000000000001,
+            0.13725499999999999,
+            0.117647,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: '_LightGray_',
+      parameters: [
+        {
+          baseColor: null,
+        },
+        {
+          baseColorTint: [
+            0.286275,
+            0.286275,
+            0.286275,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'Green',
+      parameters: [
+        {
+          baseColor: null,
+        },
+        {
+          baseColorTint: [
+            0,
+            0.50196099999999999,
+            0,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'M_0135_DarkGray',
+      parameters: [
+        {
+          baseColor: null,
+        },
+        {
+          baseColorTint: [
+            0.31764700000000001,
+            0.31764700000000001,
+            0.31764700000000001,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'M_96_96_96',
+      parameters: [
+        {
+          baseColor: null,
+        },
+        {
+          baseColorTint: [
+            0.376471,
+            0.376471,
+            0.376471,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'jean_blue',
+      parameters: [
+        {
+          baseColor: null,
+        },
+        {
+          baseColorTint: [
+            0.17254900000000001,
+            0.22745099999999999,
+            0.31764700000000001,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'DSC_0111_1',
+      parameters: [
+        {
+          baseColor: 'DSC_0111_1',
+        },
+        {
+          baseColorTint: [
+            0.56470600000000004,
+            0.58823499999999995,
+            0.54117599999999999,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'FrontColor',
+      parameters: [
+        {
+          baseColor: null,
+        },
+        {
+          baseColorTint: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'DSC_0111',
+      parameters: [
+        {
+          baseColor: 'DSC_0111',
+        },
+        {
+          baseColorTint: [
+            0.34902,
+            0.38039200000000001,
+            0.388235,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'DSC_0111_2',
+      parameters: [
+        {
+          baseColor: 'DSC_0111_2',
+        },
+        {
+          baseColorTint: [
+            0.47450999999999999,
+            0.52941199999999999,
+            0.50588200000000005,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: 0.93000000000000005,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'DSC_0111_1_',
+      parameters: [
+        {
+          baseColor: 'DSC_0111_1_',
+        },
+        {
+          baseColorTint: [
+            0.34902,
+            0.38039200000000001,
+            0.388235,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+    ],
+    collision: {},
+    file: 'sampledata/model/centaurus.obj',
+    name: 'centaurus',
+    recenter: 'root',
+    scale: 0.00046099999999999998,
+  },
+  samplers: [
+    {
+      file: 'sampledata/model\\centaurus\\Google_Earth_Snapshot.jpg',
+      name: 'Google_Earth_Snapshot',
+      pipeline_name: 'centaurus/Google_Earth_Snapshot.jpg',
+    },
+    {
+      file: 'sampledata/model\\centaurus\\DSC_0111_3.jpg',
+      name: 'DSC_0111_3',
+      pipeline_name: 'centaurus/DSC_0111_3.jpg',
+    },
+    {
+      file: 'sampledata/model\\centaurus\\DSC_0111_2.jpg',
+      name: 'DSC_0111_2',
+      pipeline_name: 'centaurus/DSC_0111_2.jpg',
+    },
+    {
+      file: 'sampledata/model\\centaurus\\Google_Earth_Snapshot4.jpg',
+      name: 'Google_Earth_Snapshot4',
+      pipeline_name: 'centaurus/Google_Earth_Snapshot4.jpg',
+    },
+    {
+      file: 'sampledata/model\\centaurus\\DSC_0111.jpg',
+      name: 'DSC_0111',
+      pipeline_name: 'centaurus/DSC_0111.jpg',
+    },
+    {
+      file: 'sampledata/model\\centaurus\\Google_Earth_Snapshot3.jpg',
+      name: 'Google_Earth_Snapshot3',
+      pipeline_name: 'centaurus/Google_Earth_Snapshot3.jpg',
+    },
+    {
+      file: 'sampledata/model\\centaurus\\DSC_0111_1.jpg',
+      name: 'DSC_0111_1',
+      pipeline_name: 'centaurus/DSC_0111_1.jpg',
+    },
+    {
+      file: 'sampledata/model\\centaurus\\DSC_0111_1_.jpg',
+      name: 'DSC_0111_1_',
+      pipeline_name: 'centaurus/DSC_0111_1_.jpg',
+    },
+  ],
+  version: '0.54:2',
+}

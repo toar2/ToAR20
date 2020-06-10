@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/screen_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.MapsActivity">
+
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical"
+        android:weightSum="1"
+        android:background="@color/application_background_color">
+
+        <RelativeLayout
+            android:id="@+id/ar_container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.51"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/takepic_button1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+
+                android:background="@android:drawable/ic_menu_camera"/>
+            <!--                android:visibility="gone"-->
+            <LinearLayout
+                android:id="@+id/ar_fragment_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <fragment
+                    android:id="@+id/sceneform_fragment"
+                    android:name="com.aaksoft.toar.arcore.CustomArFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/map_container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.39"
+            android:orientation="vertical"
+            >
+
+            <FrameLayout
+                android:id="@+id/navigation_view_fragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone" />
+
+            <com.mapbox.mapboxsdk.maps.MapView
+                android:id="@+id/map"
+                mapbox_cameraTargetLat="38.9098"
+                mapbox_cameraTargetLng="-77.0295"
+                mapbox_cameraZoom="16"
+                mapbox_styleUrl="mapbox://styles/muhammadaasharib/cjngfmifn0qte2ro9hlws9sxk"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </com.mapbox.mapboxsdk.maps.MapView>
+            <!--mapbox_styleUrl="mapbox://styles/mapbox/streets-v10"-->
+
+            <EditText
+                android:id="@+id/poiTag"
+                android:layout_width="205dp"
+                android:layout_height="46dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="33dp"
+                android:layout_marginTop="36dp"
+                android:background="@drawable/text_view_rounded_corner"
+                android:hint="Land Mark"
+                android:inputType="textPersonName"
+                android:paddingLeft="12dp"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/buttonSetPOITag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@+id/poiTag"
+                android:layout_marginEnd="22dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/button_rounded_corner"
+                android:text="Search"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/placesListViewButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginBottom="160dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/icons_menu_48"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/trackButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/icons_untrack_48"
+                android:text="" />
+
+            <Button
+                android:id="@+id/buttonDirectionApi"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="60dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/icons_find_route_48" />
+
+            <Button
+                android:id="@+id/buttonCancelNearbyPlaceRender"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="110dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/icons_cancel_48"
+                android:visibility="gone"/>
+
+            <LinearLayout
+                android:id="@+id/navigationPanel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:background="@color/application_sec_background_color"
+                android:orientation="horizontal"
+                android:visibility="visible"
+                android:weightSum="1">
+
+                <Button
+                    android:id="@+id/navigateStart"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="0.1"
+                    android:background="@drawable/icons_go_48"
+                    android:visibility="visible"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="@dimen/back_button_margin_top"/>
+
+                <Button
+                    android:id="@+id/dontNavigateButton"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="0.1"
+                    android:background="@drawable/icons_back_48"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="@dimen/back_button_margin_top"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.09"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="1"
+            android:background="@color/application_sec_background_color">
+
+            <Button
+                android:id="@+id/buttonTest1"
+                android:layout_width="14dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:drawablePadding="0dp"
+                android:text="test"
+                android:visibility="visible" />
+
+            <Button
+                android:id="@+id/mapModeButton"
+                android:layout_width="5dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.24"
+                android:background="@color/button_color"
+                android:drawableTop="@drawable/icons_map_24"
+                android:drawablePadding="0dp"
+                android:text="Map"
+                android:textColor="@color/button_text_color"
+                android:textSize="9sp" />
+
+            <Button
+                android:id="@+id/hybridModeButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_weight="0.24"
+                android:background="@color/button_color"
+                android:drawableTop="@drawable/icons_hybrid_24"
+                android:drawablePadding="0dp"
+                android:text="Hybrid"
+                android:textColor="@color/button_text_color"
+                android:textSize="9sp" />
+
+            <Button
+                android:id="@+id/cameraModeButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_weight="0.24"
+                android:background="@color/button_color"
+                android:drawableTop="@drawable/icons_camera_24"
+                android:drawablePadding="0dp"
+                android:text="Camera"
+                android:textColor="@color/button_text_color"
+                android:textSize="9sp"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/menuButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.24"
+                android:layout_marginLeft="8dp"
+                android:drawableTop="@drawable/icons_menu_24"
+                android:text="menu"
+                android:textSize="9sp"
+                android:background="@color/button_color"
+                android:textColor="@color/button_text_color"
+                android:drawablePadding="0dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+<!--    <TextView
+        android:id="@+id/userSigninStatusTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/user_login_status_red_tv"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:text="Not Signed In"
+        android:textSize="10sp"
+        android:textColor="@color/white"
+        />-->
+
+    <Button
+        android:id="@+id/userSignStatusButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/user_login_status_red_tv"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:text="Not Signed in"
+        android:textSize="10sp"
+        android:textColor="@color/white"
+        android:minHeight="0dp"
+        android:minWidth="0dp"
+        android:visibility="gone"
+        />
+
+    <FrameLayout
+        android:id="@+id/fragment_location_marker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+    </FrameLayout>
+
+</RelativeLayout>

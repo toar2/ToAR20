@@ -1,0 +1,320 @@
+{
+  materials: [
+    {
+      name: '_Blacktop_New_1',
+      parameters: [
+        {
+          baseColor: null,
+        },
+        {
+          baseColorTint: [
+            0.26666699999999999,
+            0.24313699999999999,
+            0.141176,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'M_77',
+      parameters: [
+        {
+          baseColor: 'M_77',
+        },
+        {
+          baseColorTint: [
+            0.26274500000000001,
+            0.19215699999999999,
+            0.16078400000000001,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'side',
+      parameters: [
+        {
+          baseColor: null,
+        },
+        {
+          baseColorTint: [
+            0.87843099999999996,
+            0.83921599999999996,
+            0.54117599999999999,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 's',
+      parameters: [
+        {
+          baseColor: 's',
+        },
+        {
+          baseColorTint: [
+            0.556863,
+            0.50196099999999999,
+            0.42745100000000003,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'Color_C05',
+      parameters: [
+        {
+          baseColor: null,
+        },
+        {
+          baseColorTint: [
+            0.60784300000000002,
+            0.52941199999999999,
+            0.247059,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: '_Beige_1',
+      parameters: [
+        {
+          baseColor: null,
+        },
+        {
+          baseColorTint: [
+            0.66666700000000001,
+            0.60784300000000002,
+            0.42745100000000003,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'Doors_Windows',
+      parameters: [
+        {
+          baseColor: null,
+        },
+        {
+          baseColorTint: [
+            0.26666699999999999,
+            0.17647099999999999,
+            0.121569,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'Translucent_Glass_Gray',
+      parameters: [
+        {
+          baseColor: null,
+        },
+        {
+          baseColorTint: [
+            0.44705899999999998,
+            0.44705899999999998,
+            0.44705899999999998,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: 0.5,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'Color_G16',
+      parameters: [
+        {
+          baseColor: null,
+        },
+        {
+          baseColorTint: [
+            0,
+            0.40000000000000002,
+            0,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'FrontColor',
+      parameters: [
+        {
+          baseColor: null,
+        },
+        {
+          baseColorTint: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'Concrete_Scored_Jointless',
+      parameters: [
+        {
+          baseColor: 'Concrete_Scored_Jointless',
+        },
+        {
+          baseColorTint: [
+            0.66666700000000001,
+            0.443137,
+            0.168627,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+    ],
+    collision: {},
+    file: 'sampledata/model/serena.obj',
+    name: 'serena',
+    recenter: 'root',
+    scale: 0.00281,
+  },
+  samplers: [
+    {
+      file: 'sampledata/model\\serena\\M_77.jpg',
+      name: 'M_77',
+      pipeline_name: 'serena/M_77.jpg',
+    },
+    {
+      file: 'sampledata/model\\serena\\s.jpg',
+      name: 's',
+      pipeline_name: 'serena/s.jpg',
+    },
+    {
+      file: 'sampledata/model\\serena\\Concrete_Scored_Jointless.jpg',
+      name: 'Concrete_Scored_Jointless',
+      pipeline_name: 'serena/Concrete_Scored_Jointless.jpg',
+    },
+  ],
+  version: '0.54:2',
+}

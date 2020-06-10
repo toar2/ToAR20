@@ -1,0 +1,51 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2012 Trimble Navigation Limited
+
+newmtl Translucent_Glass_Gray
+Ka 0.000000 0.000000 0.000000
+Kd 0.149020 0.149020 0.149020
+Ks 0.330000 0.330000 0.330000
+d 0.750000
+
+newmtl SMS_9732_copy_d
+Ka 0.000000 0.000000 0.000000
+Kd 0.596078 0.521569 0.462745
+Ks 0.330000 0.330000 0.330000
+map_Kd library/SMS_9732_copy_d.jpg
+
+newmtl Slate_Light_Tile
+Ka 0.000000 0.000000 0.000000
+Kd 0.439216 0.231373 0.188235
+Ks 0.330000 0.330000 0.330000
+map_Kd library/Slate_Light_Tile.jpg
+
+newmtl Metal_Corrugated_Shiny
+Ka 0.000000 0.000000 0.000000
+Kd 0.466667 0.466667 0.466667
+Ks 0.330000 0.330000 0.330000
+map_Kd library/Metal_Corrugated_Shiny.jpg
+
+newmtl Metal_Seamed
+Ka 0.000000 0.000000 0.000000
+Kd 0.235294 0.239216 0.231373
+Ks 0.330000 0.330000 0.330000
+map_Kd library/Metal_Seamed.jpg
+
+newmtl Brick_Rough_Dark
+Ka 0.000000 0.000000 0.000000
+Kd 0.725490 0.443137 0.333333
+Ks 0.330000 0.330000 0.330000
+map_Kd library/Brick_Rough_Dark.jpg
+
+newmtl _1
+Ka 0.000000 0.000000 0.000000
+Kd 0.619608 0.423529 0.333333
+Ks 0.330000 0.330000 0.330000
+map_Kd library/_1.jpg
+
+newmtl FrontColor
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.330000 0.330000 0.330000
+

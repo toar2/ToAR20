@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.UserLocationHistoryFragment"
+    android:weightSum="1"
+    android:orientation="vertical"
+    android:background="@color/application_background_color"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="@integer/back_button_container_weight"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="@integer/back_button_container_inner_left_weight"/>
+
+        <Button
+            android:id="@+id/backButtonUserHistoryFragment"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/icons_back_48_white"
+            android:layout_marginTop="@dimen/back_button_margin_top"
+            android:layout_marginEnd="@dimen/back_button_margin_end"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:text="USER LOCATION HISTORY"
+        android:gravity="center"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.8"
+            android:textSize="18sp"
+            android:layout_margin="5dp"
+            android:paddingLeft="10dp"
+            android:text="Enable Location History"
+            android:textColor="@color/white"/>
+
+        <CheckBox
+            android:id="@+id/checkboxEnableLocationHistory"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:layout_margin="5dp"
+            android:buttonTint="@color/white"
+            android:backgroundTint="@color/white"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.15"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.4"
+            android:gravity="center_horizontal"
+            android:textSize="18sp"
+            android:layout_marginTop="15dp"
+            android:paddingLeft="10dp"
+            android:textColor="@color/white"
+            android:text="Location History Prompt Range"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:layout_weight="0.6"
+            android:weightSum="1">
+
+            <SeekBar
+                android:id="@+id/seekBarImageFindRadius"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.8"
+                style="@style/CustomProgressBarHorizontal"
+                android:backgroundTint="@color/white"
+                android:thumbTint="@color/white"
+                android:progressDrawable="@color/black"
+                android:splitTrack="false"
+                android:max="50000"
+                android:min="50"
+                android:progress="100" />
+
+            <TextView
+                android:id="@+id/radiusImageFindTextViewULHFragment"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2"
+                android:paddingEnd="10dp"
+                android:text="100m"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"/>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.4"
+        android:orientation="vertical"
+        android:layout_margin="20dp">
+
+        <TextView
+            android:id="@+id/loginUsernameTextview"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="You are logged in as: "
+            android:textColor="@color/white"
+            android:visibility="gone"
+            />
+
+        <Button
+            android:id="@+id/locationHistorySigninButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:background="@drawable/button_rounded_corner"
+            android:text="Sign in" />
+
+        <Button
+            android:id="@+id/signoutButtonUserLocationHistoryFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:background="@drawable/button_rounded_corner"
+            android:text="Sign Out"
+            android:visibility="gone"/>
+
+        <Button
+            android:id="@+id/locationHistorySignupButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:background="@drawable/button_rounded_corner"
+            android:text="Sign up" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

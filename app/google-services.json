@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "850185288305",
+    "firebase_url": "https://toar20.firebaseio.com",
+    "project_id": "toar20",
+    "storage_bucket": "toar20.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:850185288305:android:4aa071f74a8ae0fbe879d0",
+        "android_client_info": {
+          "package_name": "com.aaksoft.toar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "850185288305-1liu0pau26i9bopu2478pu26no0er5dj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqMLUcVPkMEUt-_yM3xLjDtGg_jFn0E4k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "850185288305-1liu0pau26i9bopu2478pu26no0er5dj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

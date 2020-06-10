@@ -1,0 +1,345 @@
+{
+   bound_relative_root: {
+      x: 0.5,
+      y: 0,
+      z: 0.5,
+   },
+   materials: [
+      {
+         name: "_Metal_Seamed_1",
+         parameters: [
+            {
+               baseColor: "_Metal_Seamed_1",
+            },
+            {
+               baseColorTint: [
+                  0.286275,
+                  0.286275,
+                  0.27843099999999998,
+                  1,
+               ],
+            },
+            {
+               metallic: 0,
+            },
+            {
+               roughness: 1,
+            },
+            {
+               opacity: null,
+            },
+         ],
+         source: "build/sceneform_sdk/default_materials/obj_material.sfm",
+      },
+      {
+         name: "M_1087px_Five_Pointed_Star_Solid_svg",
+         parameters: [
+            {
+               baseColor: "M_1087px_Five_Pointed_Star_Solid_svg",
+            },
+            {
+               baseColorTint: [
+                  0.50196099999999999,
+                  0.50196099999999999,
+                  0.50196099999999999,
+                  1,
+               ],
+            },
+            {
+               metallic: 0,
+            },
+            {
+               roughness: 1,
+            },
+            {
+               opacity: null,
+            },
+         ],
+         source: "build/sceneform_sdk/default_materials/obj_material.sfm",
+      },
+      {
+         name: "Sandstone",
+         parameters: [
+            {
+               baseColor: "Sandstone",
+            },
+            {
+               baseColorTint: [
+                  0.46274500000000002,
+                  0.25490200000000002,
+                  0.15294099999999999,
+                  1,
+               ],
+            },
+            {
+               metallic: 0,
+            },
+            {
+               roughness: 1,
+            },
+            {
+               opacity: null,
+            },
+         ],
+         source: "build/sceneform_sdk/default_materials/obj_material.sfm",
+      },
+      {
+         name: "_1",
+         parameters: [
+            {
+               baseColor: "_1",
+            },
+            {
+               baseColorTint: [
+                  0.83137300000000003,
+                  0.72548999999999997,
+                  0.55294100000000002,
+                  1,
+               ],
+            },
+            {
+               metallic: 0,
+            },
+            {
+               roughness: 1,
+            },
+            {
+               opacity: null,
+            },
+         ],
+         source: "build/sceneform_sdk/default_materials/obj_material.sfm",
+      },
+      {
+         name: "Cladding_Stucco_White",
+         parameters: [
+            {
+               baseColor: "Cladding_Stucco_White",
+            },
+            {
+               baseColorTint: [
+                  1,
+                  1,
+                  1,
+                  1,
+               ],
+            },
+            {
+               metallic: 0,
+            },
+            {
+               roughness: 1,
+            },
+            {
+               opacity: null,
+            },
+         ],
+         source: "build/sceneform_sdk/default_materials/obj_material.sfm",
+      },
+      {
+         name: "Concrete_Aggregate_Smoke",
+         parameters: [
+            {
+               baseColor: null,
+            },
+            {
+               baseColorTint: [
+                  0.93725499999999995,
+                  0.89803900000000003,
+                  0.45490199999999997,
+                  1,
+               ],
+            },
+            {
+               metallic: 0,
+            },
+            {
+               roughness: 1,
+            },
+            {
+               opacity: null,
+            },
+         ],
+         source: "build/sceneform_sdk/default_materials/obj_material.sfm",
+      },
+      {
+         name: "Metal_Seamed",
+         parameters: [
+            {
+               baseColor: "Metal_Seamed",
+            },
+            {
+               baseColorTint: [
+                  0.46274500000000002,
+                  0.466667,
+                  0.45097999999999999,
+                  1,
+               ],
+            },
+            {
+               metallic: 0,
+            },
+            {
+               roughness: 1,
+            },
+            {
+               opacity: null,
+            },
+         ],
+         source: "build/sceneform_sdk/default_materials/obj_material.sfm",
+      },
+      {
+         name: "Metal_Corrugated_Shiny",
+         parameters: [
+            {
+               baseColor: "Metal_Corrugated_Shiny",
+            },
+            {
+               baseColorTint: [
+                  0.75686299999999995,
+                  0.75686299999999995,
+                  0.75686299999999995,
+                  1,
+               ],
+            },
+            {
+               metallic: 0,
+            },
+            {
+               roughness: 1,
+            },
+            {
+               opacity: null,
+            },
+         ],
+         source: "build/sceneform_sdk/default_materials/obj_material.sfm",
+      },
+      {
+         name: "M_0134_DimGray",
+         parameters: [
+            {
+               baseColor: null,
+            },
+            {
+               baseColorTint: [
+                  0.41176499999999999,
+                  0.41176499999999999,
+                  0.41176499999999999,
+                  1,
+               ],
+            },
+            {
+               metallic: 0,
+            },
+            {
+               roughness: 1,
+            },
+            {
+               opacity: null,
+            },
+         ],
+         source: "build/sceneform_sdk/default_materials/obj_material.sfm",
+      },
+      {
+         name: "FrontColor",
+         parameters: [
+            {
+               baseColor: null,
+            },
+            {
+               baseColorTint: [
+                  1,
+                  1,
+                  1,
+                  1,
+               ],
+            },
+            {
+               metallic: 0,
+            },
+            {
+               roughness: 1,
+            },
+            {
+               opacity: null,
+            },
+         ],
+         source: "build/sceneform_sdk/default_materials/obj_material.sfm",
+      },
+      {
+         name: "Metal_Silver",
+         parameters: [
+            {
+               baseColor: null,
+            },
+            {
+               baseColorTint: [
+                  0.94509799999999999,
+                  0.97647099999999998,
+                  1,
+                  1,
+               ],
+            },
+            {
+               metallic: 0,
+            },
+            {
+               roughness: 1,
+            },
+            {
+               opacity: null,
+            },
+         ],
+         source: "build/sceneform_sdk/default_materials/obj_material.sfm",
+      },
+   ],
+   model: {
+      attributes: [
+         "Position",
+         "TexCoord",
+         "Orientation",
+      ],
+      collision: {},
+      file: "sampledata/model/monument.obj",
+      name: "monument",
+      recenter: "root",
+      scale: 0.0010319999999999999,
+   },
+   samplers: [
+      {
+         file: "sampledata/model\\monument/_Metal_Seamed_1.jpg",
+         name: "_Metal_Seamed_1",
+         pipeline_name: "monument/_Metal_Seamed_1.jpg",
+      },
+      {
+         file: "sampledata/model\\monument/Metal_Seamed.jpg",
+         name: "Metal_Seamed",
+         pipeline_name: "monument/Metal_Seamed.jpg",
+      },
+      {
+         file: "sampledata/model\\monument/M_1087px_Five_Pointed_Star_Solid_svg.png",
+         name: "M_1087px_Five_Pointed_Star_Solid_svg",
+         pipeline_name: "monument/M_1087px_Five_Pointed_Star_Solid_svg.png",
+      },
+      {
+         file: "sampledata/model\\monument/Sandstone.jpg",
+         name: "Sandstone",
+         pipeline_name: "monument/Sandstone.jpg",
+      },
+      {
+         file: "sampledata/model\\monument/_1.jpg",
+         name: "_1",
+         pipeline_name: "monument/_1.jpg",
+      },
+      {
+         file: "sampledata/model\\monument/Metal_Corrugated_Shiny.jpg",
+         name: "Metal_Corrugated_Shiny",
+         pipeline_name: "monument/Metal_Corrugated_Shiny.jpg",
+      },
+      {
+         file: "sampledata/model\\monument/Cladding_Stucco_White.jpg",
+         name: "Cladding_Stucco_White",
+         pipeline_name: "monument/Cladding_Stucco_White.jpg",
+      },
+   ],
+   version: "0.52:1",
+}

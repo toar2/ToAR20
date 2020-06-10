@@ -1,0 +1,84 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2012 Trimble Navigation Limited
+
+newmtl Roofing_Slate_Dark
+Ka 0.000000 0.000000 0.000000
+Kd 0.066667 0.168627 0.047059
+Ks 0.330000 0.330000 0.330000
+map_Kd convention/Roofing_Slate_Dark.jpg
+
+newmtl side
+Ka 0.000000 0.000000 0.000000
+Kd 0.658824 0.623529 0.556863
+Ks 0.330000 0.330000 0.330000
+map_Kd convention/side.jpg
+
+newmtl FrontColor
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.330000 0.330000 0.330000
+
+newmtl tile
+Ka 0.000000 0.000000 0.000000
+Kd 0.682353 0.650980 0.576471
+Ks 0.330000 0.330000 0.330000
+map_Kd convention/tile.jpg
+
+newmtl Roofing_Scalloped
+Ka 0.000000 0.000000 0.000000
+Kd 0.729412 0.705882 0.690196
+Ks 0.330000 0.330000 0.330000
+map_Kd convention/Roofing_Scalloped.jpg
+
+newmtl Roofing_Metal_Standing_Seam_Red
+Ka 0.000000 0.000000 0.000000
+Kd 0.847059 0.827451 0.764706
+Ks 0.330000 0.330000 0.330000
+map_Kd convention/Roofing_Metal_Standing_Seam_Red.jpg
+
+newmtl _Roofing_Scalloped_1
+Ka 0.000000 0.000000 0.000000
+Kd 0.678431 0.564706 0.431373
+Ks 0.330000 0.330000 0.330000
+map_Kd convention/_Roofing_Scalloped_1.jpg
+
+newmtl Concrete_Aggregate_Smoke
+Ka 0.000000 0.000000 0.000000
+Kd 0.603922 0.588235 0.580392
+Ks 0.330000 0.330000 0.330000
+map_Kd convention/Concrete_Aggregate_Smoke.jpg
+
+newmtl front
+Ka 0.000000 0.000000 0.000000
+Kd 0.396078 0.360784 0.321569
+Ks 0.330000 0.330000 0.330000
+map_Kd convention/front.jpg
+
+newmtl Color_J25
+Ka 0.000000 0.000000 0.000000
+Kd 0.176471 0.156863 0.200000
+Ks 0.330000 0.330000 0.330000
+
+newmtl Color_009
+Ka 0.000000 0.000000 0.000000
+Kd 0.000000 0.000000 0.000000
+Ks 0.330000 0.330000 0.330000
+
+newmtl Celtis_australis_s_c_pia
+Ka 0.000000 0.000000 0.000000
+Kd 0.878431 0.898039 0.803922
+Ks 0.330000 0.330000 0.330000
+map_Kd convention/Celtis_australis_s_c_pia.png
+
+newmtl Vegetation_Bark_Oak
+Ka 0.000000 0.000000 0.000000
+Kd 0.266667 0.266667 0.231373
+Ks 0.330000 0.330000 0.330000
+map_Kd convention/Vegetation_Bark_Oak.jpg
+
+newmtl _FloralWhite_
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 0.980392 0.941176
+Ks 0.330000 0.330000 0.330000
+

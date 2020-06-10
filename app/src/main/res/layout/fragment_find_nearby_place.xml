@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.FindNearbyPlaceFragment"
+    android:orientation="vertical"
+    android:weightSum="1"
+    android:background="@color/application_background_color">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="@integer/back_button_container_inner_left_weight"
+            android:visibility="invisible"/>
+
+        <Button
+            android:id="@+id/backButtonFindNearbyPlaceFragment"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/icons_back_48_white"
+            android:layout_marginEnd="@dimen/back_button_margin_end"
+            android:layout_marginTop="@dimen/back_button_margin_top"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Select Place Type"
+            android:textAlignment="center"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+
+    <Spinner
+        android:id="@+id/spinnerFindNearbyPlace"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/white"
+
+        >
+    </Spinner>
+
+    <EditText
+        android:id="@+id/foodTypeSearchTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_weight="0.1"
+        android:backgroundTint="@color/black"
+        android:hint="Enter Specific food type (if any)"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:visibility="visible"
+        android:textCursorDrawable="@color/white"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.3"
+        android:orientation="vertical"
+        android:weightSum="1"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="15dp"
+            android:layout_weight="0.5"
+            android:text="Find Radius: (in metre)"
+            android:gravity="bottom"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:layout_weight="0.5"
+            android:weightSum="1">
+
+            <SeekBar
+                android:id="@+id/seekBarFindRadius"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.8"
+                android:backgroundTint="@color/white"
+                android:thumbTint="@color/button_color"
+                android:progressDrawable="@color/button_text_color"
+                style="@style/CustomProgressBarHorizontal"
+                android:splitTrack="false"
+                android:max="5000"
+                android:min="100"
+                android:progress="1000" />
+
+            <TextView
+                android:id="@+id/radiusFindTextViewFNPFragment"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2"
+                android:paddingEnd="10dp"
+                android:text="1000m"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:orientation="vertical"
+        >
+
+        <Button
+            android:id="@+id/buttonFindPlaceFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:drawableLeft="@drawable/icons_search_black_36"
+            android:text="Find Place"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:background="@drawable/button_rounded_corner"
+            android:textColor="@color/button_text_color"
+            android:padding="5dp"/>
+    </LinearLayout>
+
+
+</LinearLayout>

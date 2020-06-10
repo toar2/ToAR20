@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.HelpFragment"
+    android:orientation="vertical"
+    android:weightSum="1"
+    android:background="@color/application_background_color">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="@integer/back_button_container_inner_left_weight"
+            android:visibility="invisible"/>
+
+        <Button
+            android:id="@+id/backButtonHelpFragment"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/icons_back_48_white"
+            android:layout_marginEnd="@dimen/back_button_margin_end"
+            android:layout_marginTop="@dimen/back_button_margin_top"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:text="Help"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:layout_gravity="center"/>
+
+    <ScrollView
+        android:id="@+id/ScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.75"
+        android:scrollbars="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/navHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="\nNavigation:\n"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:scrollbars = "vertical"
+                />
+            <TextView
+                android:id="@+id/navText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="- Open menu of the application\n- Select option for navigation and press done\n- After selecting the option, choose a point on map either on hybrid mode or on map mode\n- Start navigation by pressing navigation button."
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:scrollbars = "vertical"
+                />
+            <TextView
+                android:id="@+id/poiHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="\n\nPoint of Interest Finding:\n"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:scrollbars = "vertical"
+                />
+            <TextView
+                android:id="@+id/poiText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="- Open menu and select Find Nearby Places.\n- Select the type of place from dropdown option.
+\n- Set the radius and press find places button.\n- Places will be displayed on map and also be augmented in camera.\n- If you want to
+navigate, select the marker and press navigation button."
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:scrollbars = "vertical"
+                />
+            <TextView
+                android:id="@+id/uhistHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="\n\nUser Location History:\n"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:scrollbars = "vertical"
+                />
+            <TextView
+                android:id="@+id/uhistText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="- Open the menu and select Location History.\n- To enable this feature, click enable user history checkbox\n
+-If you don't have an account press signup button and fill the required fields\n- After account creation press sigin button and enter your credentials\n
+The camera icon would appear when user history is enabled.\n- Take the picture by either opening hybrid mode or camera mode.\n-Enter the description and click save image button.\n- To see the memories select the radius in
+User History option.\n- The memories will be displayed on map in marker form.\n- Detect the surface from camera and tap on it to see images along with comments in
+augmented reality."
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:scrollbars = "vertical"/>
+            <TextView
+                android:id="@+id/modelHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="\n\nModel Rendering:\n"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:scrollbars = "vertical"/>
+            <TextView
+                android:id="@+id/modelText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="- Open menu and select 3D Building Model.\n- Click checkbox to enable model rendering.\n- Select the model
+from displayed models and press done.\n- The map would display model marker on buildings whose models are available.\n- Go to the building and click on the surface
+of detected by camera.\n- 3D model will be augmented on camera."
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:scrollbars = "vertical"/>
+
+
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</LinearLayout>

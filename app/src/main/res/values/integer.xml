@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="back_button_container_weight" type="integer" format="float">0.125</item>
+    <item name="back_button_container_inner_left_weight" type="integer" format="float">0.98</item>
+</resources>

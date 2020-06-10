@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: com.mapbox.mapboxsdk:mapbox-android-navigation:0.21.0@aar">
+    <ANNOTATIONS>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/mapbox-android-navigation-0.21.0.aar/9037fd50e9db42bc7f8258042f5692ff/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/mapbox-android-navigation-0.21.0.aar/9037fd50e9db42bc7f8258042f5692ff/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/mapbox-android-navigation-0.21.0.aar/9037fd50e9db42bc7f8258042f5692ff/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.mapbox.mapboxsdk/mapbox-android-navigation/0.21.0/e0f00e619ab30d3c5bb167b79ef999ae570b593a/mapbox-android-navigation-0.21.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

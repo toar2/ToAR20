@@ -1,0 +1,438 @@
+{
+  materials: [
+    {
+      name: 'M_15122010669_6',
+      parameters: [
+        {
+          baseColor: 'M_15122010669_6',
+        },
+        {
+          baseColorTint: [
+            0.98431400000000002,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'M_15122010669_3',
+      parameters: [
+        {
+          baseColor: null,
+        },
+        {
+          baseColorTint: [
+            0.98431400000000002,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'M_15122010669_1',
+      parameters: [
+        {
+          baseColor: 'M_15122010669_1',
+        },
+        {
+          baseColorTint: [
+            0.98823499999999997,
+            0.90196100000000001,
+            0.64705900000000005,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'M_15122010671',
+      parameters: [
+        {
+          baseColor: 'M_15122010671',
+        },
+        {
+          baseColorTint: [
+            0.56470600000000004,
+            0.51372499999999999,
+            0.439216,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'M_1512201066901',
+      parameters: [
+        {
+          baseColor: 'M_1512201066901',
+        },
+        {
+          baseColorTint: [
+            0.596078,
+            0.611765,
+            0.54901999999999995,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'Translucent_Glass_Safety',
+      parameters: [
+        {
+          baseColor: 'Translucent_Glass_Safety',
+        },
+        {
+          baseColorTint: [
+            0.80000000000000004,
+            0.92156899999999997,
+            0.95686300000000002,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: 0.5,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'M_15122010670_1',
+      parameters: [
+        {
+          baseColor: 'M_15122010670_1',
+        },
+        {
+          baseColorTint: [
+            0.94901999999999997,
+            0.89019599999999999,
+            0.73725499999999999,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: '_Color_D05_1',
+      parameters: [
+        {
+          baseColor: null,
+        },
+        {
+          baseColorTint: [
+            1,
+            0.94901999999999997,
+            0.80000000000000004,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'M_15122010670',
+      parameters: [
+        {
+          baseColor: 'M_15122010670',
+        },
+        {
+          baseColorTint: [
+            0.611765,
+            0.70196099999999995,
+            0.72156900000000002,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'M_15122010670_1_',
+      parameters: [
+        {
+          baseColor: 'M_15122010670_1_',
+        },
+        {
+          baseColorTint: [
+            0.611765,
+            0.70196099999999995,
+            0.72156900000000002,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'M_15122010670_2_',
+      parameters: [
+        {
+          baseColor: 'M_15122010670_2_',
+        },
+        {
+          baseColorTint: [
+            0.611765,
+            0.70196099999999995,
+            0.72156900000000002,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'FrontColor',
+      parameters: [
+        {
+          baseColor: null,
+        },
+        {
+          baseColorTint: [
+            0.89019599999999999,
+            0.88235300000000005,
+            0.87058800000000003,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'M_15122010670_3_',
+      parameters: [
+        {
+          baseColor: 'M_15122010670_3_',
+        },
+        {
+          baseColorTint: [
+            0.611765,
+            0.70196099999999995,
+            0.72156900000000002,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: '_Translucent_Glass_Safety_',
+      parameters: [
+        {
+          baseColor: '_Translucent_Glass_Safety_',
+        },
+        {
+          baseColorTint: [
+            0.80000000000000004,
+            0.92156899999999997,
+            0.95686300000000002,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: 0.5,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+    ],
+    collision: {},
+    file: 'sampledata/model/nustmosque.obj',
+    name: 'nustmosque',
+    recenter: 'root',
+    scale: 0.039170000000000003,
+  },
+  samplers: [
+    {
+      file: 'sampledata/model\\Nust Mosque full white\\M_15122010671.jpg',
+      name: 'M_15122010671',
+      pipeline_name: 'Nust Mosque full white/M_15122010671.jpg',
+    },
+    {
+      file: 'sampledata/model\\Nust Mosque full white\\M_15122010669_6.jpg',
+      name: 'M_15122010669_6',
+      pipeline_name: 'Nust Mosque full white/M_15122010669_6.jpg',
+    },
+    {
+      file: 'sampledata/model\\Nust Mosque full white\\M_15122010669_1.jpg',
+      name: 'M_15122010669_1',
+      pipeline_name: 'Nust Mosque full white/M_15122010669_1.jpg',
+    },
+    {
+      file: 'sampledata/model\\Nust Mosque full white\\M_1512201066901.jpg',
+      name: 'M_1512201066901',
+      pipeline_name: 'Nust Mosque full white/M_1512201066901.jpg',
+    },
+    {
+      file: 'sampledata/model\\Nust Mosque full white\\_Translucent_Glass_Safety_.jpg',
+      name: '_Translucent_Glass_Safety_',
+      pipeline_name: 'Nust Mosque full white/_Translucent_Glass_Safety_.jpg',
+    },
+    {
+      file: 'sampledata/model\\Nust Mosque full white\\M_15122010670.jpg',
+      name: 'M_15122010670',
+      pipeline_name: 'Nust Mosque full white/M_15122010670.jpg',
+    },
+    {
+      file: 'sampledata/model\\Nust Mosque full white\\M_15122010670_1.jpg',
+      name: 'M_15122010670_1',
+      pipeline_name: 'Nust Mosque full white/M_15122010670_1.jpg',
+    },
+    {
+      file: 'sampledata/model\\Nust Mosque full white\\Translucent_Glass_Safety.jpg',
+      name: 'Translucent_Glass_Safety',
+      pipeline_name: 'Nust Mosque full white/Translucent_Glass_Safety.jpg',
+    },
+    {
+      file: 'sampledata/model\\Nust Mosque full white\\M_15122010670_1_.jpg',
+      name: 'M_15122010670_1_',
+      pipeline_name: 'Nust Mosque full white/M_15122010670_1_.jpg',
+    },
+    {
+      file: 'sampledata/model\\Nust Mosque full white\\M_15122010670_2_.jpg',
+      name: 'M_15122010670_2_',
+      pipeline_name: 'Nust Mosque full white/M_15122010670_2_.jpg',
+    },
+    {
+      file: 'sampledata/model\\Nust Mosque full white\\M_15122010670_3_.jpg',
+      name: 'M_15122010670_3_',
+      pipeline_name: 'Nust Mosque full white/M_15122010670_3_.jpg',
+    },
+  ],
+  version: '0.54:2',
+}
