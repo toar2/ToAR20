@@ -66,32 +66,26 @@ public class MenuFragment extends Fragment {
             ((MapsActivity) getActivity()).isMenuBeingDisplayed = false;
             removeFragment(this);
         });
-
-        findNearbyPlaceButton = view.findViewById(R.id.buttonFindNearbyPlaceMenuFragment);
-        findNearbyPlaceButton.setOnClickListener(view1->{
-
-            FindNearbyPlaceFragment findNearbyPlaceFragment = new FindNearbyPlaceFragment();
-            FragmentManager fragmentManager = getFragmentManager();
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.screen_container, findNearbyPlaceFragment);    //add can be used if we want to go to root fragment directly
-            fragmentTransaction.addToBackStack(null);
-            fragmentTransaction.commit();
-            removeFragment(this);
-
-
-//            Intent intent = new Intent(getActivity(), augmentModels.class);
-//            startActivity(intent);
-        });
-
-        buildingModelOptionButton = view.findViewById(R.id.buttonBuildingModelMenuFragment);
-        buildingModelOptionButton.setOnClickListener(view1->{
-//            BuildingModelOptionFragment buildingModelOptionFragment = new BuildingModelOptionFragment();
+//
+//        findNearbyPlaceButton = view.findViewById(R.id.buttonFindNearbyPlaceMenuFragment);
+//        findNearbyPlaceButton.setOnClickListener(view1->{
+//
+//            FindNearbyPlaceFragment findNearbyPlaceFragment = new FindNearbyPlaceFragment();
 //            FragmentManager fragmentManager = getFragmentManager();
 //            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-//            fragmentTransaction.replace(R.id.screen_container, buildingModelOptionFragment);
+//            fragmentTransaction.replace(R.id.screen_container, findNearbyPlaceFragment);    //add can be used if we want to go to root fragment directly
 //            fragmentTransaction.addToBackStack(null);
 //            fragmentTransaction.commit();
 //            removeFragment(this);
+//
+//
+////            Intent intent = new Intent(getActivity(), augmentModels.class);
+////            startActivity(intent);
+//        });
+
+        buildingModelOptionButton = view.findViewById(R.id.buttonBuildingModelMenuFragment);
+        buildingModelOptionButton.setOnClickListener(view1->{
+
             Intent intent = new Intent(getActivity(), augmentModels.class);
             intent.putExtra("uniqueUserID" , ((MapsActivity)getActivity()).getUniqueUserID());              // Passing unique userId
             intent.putExtra("latitude", ((MapsActivity)getActivity()).getLatitude());                            // Passing latitude and longitude to

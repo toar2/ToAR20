@@ -42,7 +42,6 @@ import java.util.Date;
 public class augmentModels extends AppCompatActivity {
 
 
-
     ArFragment arFragment;
     ImageView serena, centaurus, faisalmosque, monument, library, convention,
                 parliment, nice, nustgatethree, nustgateten, nustmosque, seecs;
