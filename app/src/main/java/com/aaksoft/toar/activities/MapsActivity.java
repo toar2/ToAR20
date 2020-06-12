@@ -25,7 +25,7 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.location.Location;
 
-import com.aaksoft.toar.azure.Users;
+import com.aaksoft.toar.firebase.Users;
 import com.google.android.gms.location.LocationListener;
 
 import android.net.ConnectivityManager;
@@ -80,15 +80,11 @@ import com.mapbox.mapboxsdk.annotations.MarkerOptions;
 import com.mapbox.mapboxsdk.camera.CameraPosition;
 import com.mapbox.mapboxsdk.camera.CameraUpdateFactory;
 
-import com.google.ar.core.Frame;
 import com.google.ar.core.Plane;
 import com.google.ar.core.Session;
-import com.google.ar.core.TrackingState;
 import com.google.ar.core.exceptions.CameraNotAvailableException;
 import com.google.ar.core.exceptions.UnavailableException;
 import com.google.ar.sceneform.ArSceneView;
-import com.google.ar.sceneform.Node;
-import com.google.ar.sceneform.rendering.ModelRenderable;
 import com.google.ar.sceneform.rendering.ViewRenderable;
 import com.google.ar.sceneform.ux.ArFragment;
 
@@ -135,16 +131,13 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 import java.util.Timer;
 import java.util.TimerTask;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutionException;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import com.aaksoft.toar.arcore.CustomArFragment;
-import com.aaksoft.toar.azure.ImageManager;
-import com.aaksoft.toar.azure.ImagesData;
+import com.aaksoft.toar.firebase.ImageManager;
+import com.aaksoft.toar.firebase.ImagesData;
 import com.aaksoft.toar.fragments.MenuFragment;
 import com.aaksoft.toar.fragments.ModelSceneViewRenderFragment;
 import com.aaksoft.toar.fragments.NavigationFragment;
@@ -157,7 +150,7 @@ import com.aaksoft.toar.localdb.ImageInformation;
 import com.aaksoft.toar.localdb.LocalDatabaseHelper;
 import com.aaksoft.toar.localdb.utils.AppSetting;
 import com.aaksoft.toar.mapbox.MarkerType;
-import uk.co.appoly.arcorelocation.LocationMarker;
+
 import uk.co.appoly.arcorelocation.LocationScene;
 import uk.co.appoly.arcorelocation.utils.ARLocationPermissionHelper;
 

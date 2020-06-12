@@ -18,7 +18,7 @@ import android.widget.Toast;
 
 import com.aaksoft.toar.R;
 import com.aaksoft.toar.activities.MapsActivity;
-import com.aaksoft.toar.azure.Users;
+import com.aaksoft.toar.firebase.Users;
 
 import static com.mapbox.mapboxsdk.Mapbox.getApplicationContext;
 
