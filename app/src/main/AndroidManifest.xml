@@ -28,6 +28,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".activities.augmentModels"></activity>
+        <activity
+            android:name=".activities.chatActivity"
+            android:label="@string/title_activity_maps"
+            android:screenOrientation="portrait"></activity>
         <!--
 What is this provider thing?
 research later
@@ -60,6 +64,7 @@ research later
             android:name=".activities.MapsActivity"
             android:label="@string/title_activity_maps"
             android:screenOrientation="portrait">
+
 
             <!--
         <intent-filter>

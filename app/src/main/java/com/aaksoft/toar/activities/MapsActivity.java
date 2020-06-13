@@ -2128,21 +2128,22 @@ public class MapsActivity extends FragmentActivity implements
         ok.show();
     }
     public void goToMessanger(View view){
-//        String contactId = (String)view.getTag();
-//        String jointChatNode;
-//        try {
-//            jointChatNode = getJointNode.getUniqueNode(uniqueUserID, contactId);
-//        }
-//        catch(NoSuchAlgorithmException e){
-//            e.printStackTrace();
-//            Toast.makeText(getApplicationContext(), "No such algorithm exception occured!", Toast.LENGTH_LONG).show();
-//            return;
-//        }
-//        startActivity(new Intent(getApplicationContext(), augmentModels.class).putExtra("contact", (String)jointChatNode));
+        String contactId = (String)view.getTag();
+        String jointChatNode;
+        try {
+            jointChatNode = getJointNode.getUniqueNode(uniqueUserID, contactId);
+        }
+        catch(NoSuchAlgorithmException e){
+            e.printStackTrace();
+            Toast.makeText(getApplicationContext(), "No such algorithm exception occured!", Toast.LENGTH_LONG).show();
+            return;
+        }
+        startActivity(new Intent(getApplicationContext(), chatActivity.class).putExtra("chatNode", (String)jointChatNode));
 
 
-        Toast.makeText(getApplicationContext(), "Awaiting implementation", Toast.LENGTH_LONG);}
+//        Toast.makeText(getApplicationContext(), "Awaiting implementation", Toast.LENGTH_LONG);
 
+    }
 }
 
 
