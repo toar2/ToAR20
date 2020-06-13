@@ -6,8 +6,8 @@
     <color name="grey">#D8eeeeee</color>
     <color name="white">#fff</color>
     <color name="black">#000</color>
-    <color name="button_color">#fff</color><!-- -->
-    <color name="button_text_color">#000</color>
+    <color name="button_color">#FFFFFF</color><!-- -->
+    <color name="button_text_color">#000000</color>
     <color name="opaque_black">#52000000</color>
     <color name="opaque_more_black">#D8000000</color>
 

@@ -66,6 +66,15 @@
             android:text="3D Building Model" />
 
         <Button
+            android:id="@+id/userContactsMenuButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/button_rounded_corner_icon"
+            android:drawableLeft="@drawable/icon_contacts_24"
+            android:text="Contacts" />
+
+        <Button
             android:id="@+id/buttonLocationHistoryFragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

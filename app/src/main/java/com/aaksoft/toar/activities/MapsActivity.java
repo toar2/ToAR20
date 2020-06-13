@@ -17,6 +17,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.hardware.Sensor;
@@ -26,6 +27,7 @@ import android.hardware.SensorManager;
 import android.location.Location;
 
 import com.aaksoft.toar.firebase.Users;
+import com.aaksoft.toar.firebase.getJointNode;
 import com.google.android.gms.location.LocationListener;
 
 import android.net.ConnectivityManager;
@@ -57,6 +59,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -125,6 +128,7 @@ import java.io.InputStream;
 import java.net.InetAddress;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.security.NoSuchAlgorithmException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -1971,7 +1975,7 @@ public class MapsActivity extends FragmentActivity implements
     * The following function is used to create a
     * an alert message
     * */
-    private void alertDisplayer(String title,String message){
+    public void alertDisplayer(String title,String message){
         AlertDialog.Builder builder = new AlertDialog.Builder(this)
                 .setTitle(title)
                 .setMessage(message)
@@ -2123,5 +2127,22 @@ public class MapsActivity extends FragmentActivity implements
         });
         ok.show();
     }
+    public void goToMessanger(View view){
+//        String contactId = (String)view.getTag();
+//        String jointChatNode;
+//        try {
+//            jointChatNode = getJointNode.getUniqueNode(uniqueUserID, contactId);
+//        }
+//        catch(NoSuchAlgorithmException e){
+//            e.printStackTrace();
+//            Toast.makeText(getApplicationContext(), "No such algorithm exception occured!", Toast.LENGTH_LONG).show();
+//            return;
+//        }
+//        startActivity(new Intent(getApplicationContext(), augmentModels.class).putExtra("contact", (String)jointChatNode));
+
+
+        Toast.makeText(getApplicationContext(), "Awaiting implementation", Toast.LENGTH_LONG);}
 
 }
+
+

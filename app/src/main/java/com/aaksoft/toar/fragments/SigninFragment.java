@@ -1,11 +1,5 @@
 package com.aaksoft.toar.fragments;
 
-/*
-    Created By Usama
-    on
-    15 March, 2019
- */
-
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.AsyncTask;
@@ -35,10 +29,6 @@ import com.google.firebase.database.DatabaseReference;
 
 import static com.mapbox.mapboxsdk.Mapbox.getApplicationContext;
 import static com.microsoft.windowsazure.mobileservices.table.query.QueryOperations.val;
-
-/*
-    Fragment for user sign in functionality
-*/
 
 public class SigninFragment extends Fragment {
 
@@ -153,7 +143,7 @@ public class SigninFragment extends Fragment {
         fragmentTransaction.commit();
     }
 
-    private void alertDisplayer(String title,String message){
+    public void alertDisplayer(String title,String message){
         AlertDialog.Builder builder = new AlertDialog.Builder((MapsActivity)getActivity())
                 .setTitle(title)
                 .setMessage(message)

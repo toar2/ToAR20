@@ -20,6 +20,7 @@ import android.widget.Toast;
 import com.aaksoft.toar.R;
 import com.aaksoft.toar.activities.MapsActivity;
 import com.aaksoft.toar.activities.augmentModels;
+import com.aaksoft.toar.fragments.ContactListFragment;
 
 import java.util.Map;
 
@@ -30,8 +31,9 @@ import java.util.Map;
 public class MenuFragment extends Fragment {
 
     Button backButton;
-    Button findNearbyPlaceButton;
+
     Button buildingModelOptionButton;
+    Button userContactsButton;
     Button locationHistoryButton;
     Button navigationOptionButton;
     Button helpButton;
@@ -52,8 +54,7 @@ public class MenuFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //if (getArguments() != null) {
-        //}
+
     }
 
     @Override
@@ -66,22 +67,7 @@ public class MenuFragment extends Fragment {
             ((MapsActivity) getActivity()).isMenuBeingDisplayed = false;
             removeFragment(this);
         });
-//
-//        findNearbyPlaceButton = view.findViewById(R.id.buttonFindNearbyPlaceMenuFragment);
-//        findNearbyPlaceButton.setOnClickListener(view1->{
-//
-//            FindNearbyPlaceFragment findNearbyPlaceFragment = new FindNearbyPlaceFragment();
-//            FragmentManager fragmentManager = getFragmentManager();
-//            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-//            fragmentTransaction.replace(R.id.screen_container, findNearbyPlaceFragment);    //add can be used if we want to go to root fragment directly
-//            fragmentTransaction.addToBackStack(null);
-//            fragmentTransaction.commit();
-//            removeFragment(this);
-//
-//
-////            Intent intent = new Intent(getActivity(), augmentModels.class);
-////            startActivity(intent);
-//        });
+
 
         buildingModelOptionButton = view.findViewById(R.id.buttonBuildingModelMenuFragment);
         buildingModelOptionButton.setOnClickListener(view1->{
@@ -94,6 +80,27 @@ public class MenuFragment extends Fragment {
             intent.putExtra("userName", ((MapsActivity)getActivity()).getUserName());
             startActivity(intent);
         });
+
+        userContactsButton = view.findViewById(R.id.userContactsMenuButton);
+        userContactsButton.setOnClickListener(view1 -> {
+
+            if(((MapsActivity)getActivity()).currentUser == null){
+
+                Toast.makeText(getActivity().getApplicationContext(), "Please login to continue", Toast.LENGTH_LONG).show();
+
+            }
+
+            ContactListFragment contactListFragment = new ContactListFragment();
+            FragmentManager fragmentManager = getFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.screen_container, contactListFragment);
+            fragmentTransaction.commit();
+            fragmentTransaction.addToBackStack(null);
+            removeFragment(this);
+
+
+        });
+
 
         locationHistoryButton = view.findViewById(R.id.buttonLocationHistoryFragment);
         locationHistoryButton.setOnClickListener(view1->{
