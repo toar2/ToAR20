@@ -27,6 +27,7 @@ import android.hardware.SensorManager;
 import android.location.Location;
 
 import com.aaksoft.toar.firebase.Users;
+import com.aaksoft.toar.firebase.contact;
 import com.aaksoft.toar.firebase.getJointNode;
 import com.google.android.gms.location.LocationListener;
 
@@ -187,6 +188,7 @@ public class MapsActivity extends FragmentActivity implements
     private Location lastLocation;
     private PermissionsManager permissionsManager;
 
+    public List<contact> userContacts;
     private Button trackModeButton;
     private Button startNavigationButton;
     private Button dontNavigateButton;
@@ -321,6 +323,8 @@ public class MapsActivity extends FragmentActivity implements
     protected void onCreate(Bundle savedInstanceState) {
 
 
+
+
         // Test button in enabled
 
         int testMode = 0;
@@ -328,6 +332,7 @@ public class MapsActivity extends FragmentActivity implements
         mAuth = FirebaseAuth.getInstance();         // Fetching an instance of Firebase
         currentUser = mAuth.getCurrentUser();       // Checking status of current user
 
+        userContacts = new ArrayList<contact>();
 
 
         super.onCreate(savedInstanceState);
@@ -1916,6 +1921,34 @@ public class MapsActivity extends FragmentActivity implements
     }
 
 
+    public void getUserContacts(){
+
+        FirebaseDatabase.getInstance().getReference().child("users").child(getUniqueUserID()).child("contacts").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Toast.makeText(getApplicationContext(), "No of contacts: " + Long.toString(dataSnapshot.getChildrenCount()), Toast.LENGTH_LONG).show();
+                for (DataSnapshot singleContact: dataSnapshot.getChildren()){
+
+                    contact latestContact = singleContact.getValue(contact.class);
+                    userContacts.add(latestContact);
+
+
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+
+            }
+        });
+
+
+
+
+    }
+
     // deletes the directory of user images
     public boolean clearImageDirectory(){
         File picDir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES) + File.separator + "ToAR/" + uniqueUserID + "/" );
@@ -2073,7 +2106,7 @@ public class MapsActivity extends FragmentActivity implements
             userSignStatusButton.setTextColor(ContextCompat.getColor(getApplicationContext(),R.color.black));
             isUserSignedIn = true;
 
-
+            getUserContacts();
             downloadCloudImages();
         }
 
@@ -2149,6 +2182,8 @@ public class MapsActivity extends FragmentActivity implements
 //        Toast.makeText(getApplicationContext(), "Awaiting implementation", Toast.LENGTH_LONG);
 
     }
+
+
 }
 
 

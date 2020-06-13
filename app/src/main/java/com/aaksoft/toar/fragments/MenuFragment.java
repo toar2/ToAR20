@@ -20,9 +20,6 @@ import android.widget.Toast;
 import com.aaksoft.toar.R;
 import com.aaksoft.toar.activities.MapsActivity;
 import com.aaksoft.toar.activities.augmentModels;
-import com.aaksoft.toar.fragments.ContactListFragment;
-
-import java.util.Map;
 
 /*
     Handles the Application menu
@@ -69,7 +66,7 @@ public class MenuFragment extends Fragment {
         });
 
 
-        buildingModelOptionButton = view.findViewById(R.id.buttonBuildingModelMenuFragment);
+        buildingModelOptionButton = view.findViewById(R.id.lookforcontactbutton);
         buildingModelOptionButton.setOnClickListener(view1->{
 
             Intent intent = new Intent(getActivity(), augmentModels.class);
@@ -87,8 +84,9 @@ public class MenuFragment extends Fragment {
             if(((MapsActivity)getActivity()).currentUser == null){
 
                 Toast.makeText(getActivity().getApplicationContext(), "Please login to continue", Toast.LENGTH_LONG).show();
-
+                return;
             }
+
 
             ContactListFragment contactListFragment = new ContactListFragment();
             FragmentManager fragmentManager = getFragmentManager();
@@ -166,5 +164,10 @@ public class MenuFragment extends Fragment {
         fragmentTransaction.remove(fragment);
         fragmentTransaction.commit();
     }
+
+    public void addNewContact(){
+
+    }
+
 
 }

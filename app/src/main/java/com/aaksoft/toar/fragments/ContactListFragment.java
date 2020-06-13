@@ -1,5 +1,6 @@
 package com.aaksoft.toar.fragments;
 
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -11,6 +12,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.aaksoft.toar.R;
@@ -25,6 +27,7 @@ public class ContactListFragment extends Fragment {
 
     private List<contact> userContacts;
     RecyclerView rv;
+    FloatingActionButton addNewContactButton;
 
     public ContactListFragment(){}
 
@@ -33,11 +36,17 @@ public class ContactListFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_contacts, container,false);
         rv = view.findViewById(R.id.rv);
-
+        addNewContactButton = (FloatingActionButton) view.findViewById(R.id.goToAddNewContactFragmentButton);
         initializeData();
         LinearLayoutManager llm = new LinearLayoutManager(this.getActivity().getApplicationContext());
         rv.setLayoutManager(llm);
-        contactListAdapter adapter = new contactListAdapter(userContacts);
+        contactListAdapter adapter = new contactListAdapter(userContacts, getActivity());
+        addNewContactButton.setOnClickListener(v ->{
+
+
+
+
+        });
 
         rv.setAdapter(adapter);
 
@@ -46,28 +55,9 @@ public class ContactListFragment extends Fragment {
 
 
     private void initializeData(){
-        userContacts = new ArrayList<>();
-        userContacts.add(new contact("Emma Wilson", "Emma69____", "Id1"));
-        userContacts.add(new contact("Lavery Maiss", "Lavander232", "Id2"));
-        userContacts.add(new contact("Lillie Watts", "LillyzHoe", "Id3"));
-        userContacts.add(new contact("Emma Wilson", "Emma69____", "Id1"));
-        userContacts.add(new contact("Lavery Maiss", "Lavander232", "Id2"));
-        userContacts.add(new contact("Lillie Watts", "LillyzHoe", "Id3"));
-        userContacts.add(new contact("Emma Wilson", "Emma69____", "Id1"));
-        userContacts.add(new contact("Lavery Maiss", "Lavander232", "Id2"));
-        userContacts.add(new contact("Lillie Watts", "LillyzHoe", "Id3"));
-        userContacts.add(new contact("Emma Wilson", "Emma69____", "Id1"));
-        userContacts.add(new contact("Lavery Maiss", "Lavander232", "Id2"));
-        userContacts.add(new contact("Lillie Watts", "LillyzHoe", "Id3"));
-        userContacts.add(new contact("Emma Wilson", "Emma69____", "Id1"));
-        userContacts.add(new contact("Lavery Maiss", "Lavander232", "Id2"));
-        userContacts.add(new contact("Lillie Watts", "LillyzHoe", "Id3"));
-        userContacts.add(new contact("Emma Wilson", "Emma69____", "Id1"));
-        userContacts.add(new contact("Lavery Maiss", "Lavander232", "Id2"));
-        userContacts.add(new contact("Lillie Watts", "LillyzHoe", "Id3"));
-        userContacts.add(new contact("Emma Wilson", "Emma69____", "Id1"));
-        userContacts.add(new contact("Lavery Maiss", "Lavander232", "Id2"));
-        userContacts.add(new contact("Lillie Watts", "LillyzHoe", "Id3"));
+
+        this.userContacts = ((MapsActivity)getActivity()).userContacts;
+
     }
 
 

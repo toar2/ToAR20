@@ -34,9 +34,11 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -136,124 +138,144 @@ public class SignupFragment extends Fragment {
 
                 } else {
 
-
-                    signupProgressBar.setVisibility(View.VISIBLE);
-                    AsyncTask<Void, Void, Void> accountCreation = new AsyncTask<Void, Void, Void>() {
+                    FirebaseDatabase.getInstance().getReference("userNames").child(username.toUpperCase()).getRef().addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
-                        protected Void doInBackground(Void... voids) {
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            if(dataSnapshot.getValue() != null){
+                                alertDisplayer("Error", "The username you have entered is already in use. ");
+                            }
+                            else{
+                                signupProgressBar.setVisibility(View.VISIBLE);
+                                AsyncTask<Void, Void, Void> accountCreation = new AsyncTask<Void, Void, Void>() {
+                                    @Override
+                                    protected Void doInBackground(Void... voids) {
 
-                            mAuth.createUserWithEmailAndPassword(email, password).
-                                    addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                                        @Override
-                                        public void onComplete(Task<AuthResult> task) {
-                                            currentUser = mAuth.getCurrentUser();
-                                            if (task.isSuccessful()) {
-                                                ((MapsActivity)getActivity()).clearImageDirectory();            // Delete any preexisting users images
-                                                UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
-                                                        .setDisplayName(name).build();
+                                        mAuth.createUserWithEmailAndPassword(email, password).
+                                                addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                                                    @Override
+                                                    public void onComplete(Task<AuthResult> task) {
+                                                        currentUser = mAuth.getCurrentUser();
+                                                        if (task.isSuccessful()) {
+                                                            ((MapsActivity)getActivity()).clearImageDirectory();            // Delete any preexisting users images
+                                                            UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                                                                    .setDisplayName(name).build();
 
-                                                currentUser.updateProfile(profileUpdates);
-                                                String id = currentUser.getUid();
-                                                String hashedPassword;
+                                                            currentUser.updateProfile(profileUpdates);
+                                                            String id = currentUser.getUid();
+                                                            String hashedPassword;
 
-                                                try{
-                                                    hashedPassword = getJointNode.sha256(password + lastname);                                     // getting the hash of the password
-                                                                                                                                        // the user added
-                                                    Users newUser = new Users(name, username, email, id, hashedPassword);               // uploading the user pojo
+                                                            try{
+                                                                hashedPassword = getJointNode.sha256(password + lastname);                                     // getting the hash of the password
+                                                                // the user added
+                                                                Users newUser = new Users(name, username, email, id, hashedPassword);               // uploading the user pojo
+
+                                                                usersDatabaseReference.child("userNames").child(username.toUpperCase()).setValue(id);
+                                                                usersDatabaseReference.child("users").child(id).child("profileInformation").setValue(newUser);
+                                                                // now here upload new found user's data to storage
+                                                                if(shouldUploadUserDp){
 
 
-                                                    usersDatabaseReference.child("users").child(id).child("profileInformation").setValue(newUser);
-                                                    // now here upload new found user's data to storage
-                                                    if(shouldUploadUserDp){
+                                                                    FirebaseStorage.getInstance().getReference().child("profilePictures").child(id)
+                                                                            .putFile(uri).addOnCompleteListener(getActivity(),
+                                                                            new OnCompleteListener<UploadTask.TaskSnapshot>() {
+                                                                                @Override
+                                                                                public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
+                                                                                    if (task.isSuccessful()) {
+                                                                                        task.getResult().getMetadata().getReference().getDownloadUrl()
+                                                                                                .addOnCompleteListener(r -> {
+                                                                                                    if (r.isSuccessful()) {
+
+                                                                                                        // setting the user's profile picture id url
 
 
-                                                        FirebaseStorage.getInstance().getReference().child("profilePictures").child(id)
-                                                        .putFile(uri).addOnCompleteListener(getActivity(),
-                                                                new OnCompleteListener<UploadTask.TaskSnapshot>() {
+
+                                                                                                        usersDatabaseReference.child("users").child(id).child("profileInformation").child("photoURL").setValue(r.getResult().toString());
+                                                                                                        UserProfileChangeRequest profileUpdates2 = new UserProfileChangeRequest.Builder()
+                                                                                                                .setPhotoUri(r.getResult()).build();
+                                                                                                        currentUser.updateProfile(profileUpdates2);
+
+                                                                                                    }
+                                                                                                    else{
+                                                                                                        Log.d("Dp url setting failed!", "Failed to retrieve user photo url");
+
+                                                                                                    }
+
+                                                                                                });
+
+
+
+
+                                                                                    } else {
+                                                                                        Log.w("Dp upload failed!", "Image upload task was not successful.",
+                                                                                                task.getException());
+                                                                                    }
+                                                                                }
+                                                                            });
+
+                                                                }
+                                                                else{
+
+                                                                }
+
+
+
+
+
+                                                                Toast.makeText(getApplicationContext(), "Signup Successful " + currentUser.getUid(), Toast.LENGTH_LONG).show();
+
+                                                                ((MapsActivity)getActivity()).beenGreetedOnce = false;
+                                                                ((MapsActivity)getActivity()).refreshCurrentUser();
+
+                                                                ((MapsActivity) getActivity()).runOnUiThread(new Runnable() {
                                                                     @Override
-                                                                    public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
-                                                                        if (task.isSuccessful()) {
-                                                                            task.getResult().getMetadata().getReference().getDownloadUrl()
-                                                                                    .addOnCompleteListener(r -> {
-                                                                                        if (r.isSuccessful()) {
+                                                                    public void run() {
+                                                                        signupProgressBar.setVisibility(View.GONE);
+                                                                        SigninFragment signinFragment = new SigninFragment();
+                                                                        FragmentManager fragmentManager = getFragmentManager();
+                                                                        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                                                                        fragmentTransaction.replace(R.id.screen_container, signinFragment);    //add can be used if we want to go to root fragment directly
+                                                                        fragmentTransaction.addToBackStack(null);
+                                                                        fragmentTransaction.commit();
+                                                                        ((MapsActivity) getActivity()).isMenuBeingDisplayed = false;
 
-                                                                                            // setting the user's profile picture id url
-
-
-
-                                                                                            usersDatabaseReference.child("users").child(id).child("profileInformation").child("photoURL").setValue(r.getResult().toString());
-                                                                                            UserProfileChangeRequest profileUpdates2 = new UserProfileChangeRequest.Builder()
-                                                                                                    .setPhotoUri(r.getResult()).build();
-                                                                                            currentUser.updateProfile(profileUpdates2);
-
-                                                                                        }
-                                                                                        else{
-                                                                                            Log.d("Dp url setting failed!", "Failed to retrieve user photo url");
-
-                                                                                        }
-
-                                                                                    });
-
-
-
-
-                                                                        } else {
-                                                                            Log.w("Dp upload failed!", "Image upload task was not successful.",
-                                                                                    task.getException());
-                                                                        }
                                                                     }
                                                                 });
-
-                                                    }
-                                                    else{
-
-                                                    }
-
+                                                            }
+                                                            catch(NoSuchAlgorithmException e){
+                                                                e.printStackTrace();
+                                                            }
 
 
 
-
-                                                    Toast.makeText(getApplicationContext(), "Signup Successful " + currentUser.getUid(), Toast.LENGTH_LONG).show();
-
-                                                    ((MapsActivity)getActivity()).beenGreetedOnce = false;
-                                                    ((MapsActivity)getActivity()).refreshCurrentUser();
-
-                                                    ((MapsActivity) getActivity()).runOnUiThread(new Runnable() {
-                                                        @Override
-                                                        public void run() {
+                                                        } else {
+                                                            Toast.makeText(getApplicationContext(), "Signup failed!", Toast.LENGTH_LONG).show();
+                                                            alertDisplayer("SignUp Failed!", task.getException().getMessage());
                                                             signupProgressBar.setVisibility(View.GONE);
-                                                            SigninFragment signinFragment = new SigninFragment();
-                                                            FragmentManager fragmentManager = getFragmentManager();
-                                                            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                                                            fragmentTransaction.replace(R.id.screen_container, signinFragment);    //add can be used if we want to go to root fragment directly
-                                                            fragmentTransaction.addToBackStack(null);
-                                                            fragmentTransaction.commit();
-                                                            ((MapsActivity) getActivity()).isMenuBeingDisplayed = false;
-
                                                         }
-                                                    });
-                                                }
-                                                catch(NoSuchAlgorithmException e){
-                                                    e.printStackTrace();
-                                                }
-
-
-
-                                            } else {
-                                                Toast.makeText(getApplicationContext(), "Signup failed!", Toast.LENGTH_LONG).show();
-                                                alertDisplayer("SignUp Failed!", task.getException().getMessage());
-                                                signupProgressBar.setVisibility(View.GONE);
-                                            }
-                                        }
-                                    });
-                            return null;
+                                                    }
+                                                });
+                                        return null;
+                                    }
+                                };
+                                accountCreation.execute();
+                            }
                         }
-                    };
-                    accountCreation.execute();
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+                            alertDisplayer("Error", databaseError.getMessage());
+
+                        }
+                    });
+
+
+
                 }
             }
 
         });
+
+
 
         signinButton = view.findViewById(R.id.signinButton);
         signinButton.setOnClickListener(view1 -> {
