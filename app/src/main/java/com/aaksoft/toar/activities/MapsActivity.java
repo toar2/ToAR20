@@ -2021,13 +2021,18 @@ public class MapsActivity extends FragmentActivity implements
             // Creating the references for our user to access his/her profile information, ImagesDatabase, and
             // Images from the cloud
             this.usersDatabaseReference = FirebaseDatabase.getInstance().getReference("users").child(getUniqueUserID());
-            this.usersImagesDatabaseReference = FirebaseDatabase.getInstance().getReference("userImages").child(getUniqueUserID()).getRef();
+
+
+            this.usersImagesDatabaseReference = usersDatabaseReference.child("userImages");
+
+
+            // storage reference will remain the same
             this.userImagesStorageReference = FirebaseStorage.getInstance().getReference("usersImages/" + getUniqueUserID()+"/");
 
 
 
 
-            usersDatabaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+            usersDatabaseReference.child("profileInformation").addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 

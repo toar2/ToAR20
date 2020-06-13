@@ -142,6 +142,12 @@
             />
 
         <Button
+            android:id="@+id/ChooseDpButton"
+            android:layout_width="318dp"
+            android:layout_height="wrap_content"
+            android:text="Upload Display Picture" />
+
+        <Button
             android:id="@+id/signupButton"
             android:layout_width="match_parent"
             android:layout_height="40dp"

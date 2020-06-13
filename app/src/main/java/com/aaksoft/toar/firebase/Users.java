@@ -14,6 +14,7 @@ public class Users {
      private String name;
      private String password;
      private String username;
+     private String photoURL;
 
 
      public Users(){               // Empty constructor
@@ -68,6 +69,10 @@ public class Users {
 
      public void setName(String name) {
           this.name = name;
+     }
+
+     public void setPhotoURL(String photoURL){
+          this.photoURL = photoURL;
      }
 
 }

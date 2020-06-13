@@ -277,8 +277,12 @@ public class chatActivity extends AppCompatActivity
 
     }
     @Override
+
+
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+
+
         Log.d(TAG, "onActivityResult: requestCode=" + requestCode + ", resultCode=" + resultCode);
 
         if (requestCode == REQUEST_IMAGE) {
@@ -316,6 +320,9 @@ public class chatActivity extends AppCompatActivity
             }
         }
     }
+
+
+
     private void putImageInStorage(StorageReference storageReference, Uri uri, final String key) {
         storageReference.putFile(uri).addOnCompleteListener(chatActivity.this,
                 new OnCompleteListener<UploadTask.TaskSnapshot>() {
