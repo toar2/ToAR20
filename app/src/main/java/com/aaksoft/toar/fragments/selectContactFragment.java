@@ -1,5 +1,6 @@
 package com.aaksoft.toar.fragments;
 
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -16,9 +17,11 @@ import com.aaksoft.toar.R;
 import com.aaksoft.toar.activities.MapsActivity;
 import com.aaksoft.toar.adapters.contactListAdapter;
 import com.aaksoft.toar.firebase.contact;
+import com.aaksoft.toar.localdb.utils.BitmapDataObject;
 
 import org.jetbrains.annotations.Nullable;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class selectContactFragment extends Fragment {
@@ -29,6 +32,28 @@ public class selectContactFragment extends Fragment {
     Button sendButton;
 
     public selectContactFragment(){}
+
+
+    public static selectContactFragment newInstanceForSendMemories(Bitmap image, String senderId, double lat, double lon) {
+        selectContactFragment fragment  = new selectContactFragment();
+
+        Bundle memoryArguments = new Bundle();
+
+        BitmapDataObject bitmapDataObject = new BitmapDataObject(image);
+
+        memoryArguments.putSerializable("MemoryImage", bitmapDataObject);
+        memoryArguments.putSerializable("senderId", senderId);
+        memoryArguments.putSerializable("lat", lat);
+        memoryArguments.putSerializable("lon", lon);
+
+        fragment.setArguments(memoryArguments);
+        return fragment;
+
+
+    }
+
+
+
 
     @Nullable
     @Override

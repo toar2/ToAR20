@@ -134,6 +134,17 @@ public class UserPictureCapturePreviewDetailFragment extends Fragment {
         sendPictureAsMemoryButton = view.findViewById(R.id.sendMemoryButton);
 
 
+        sendPictureAsMemoryButton.setOnClickListener(view1->{
+
+            selectContactFragment fragment = selectContactFragment.newInstanceForSendMemories(image, owner_id, lat, lng);
+            FragmentManager fm = getFragmentManager();
+            FragmentTransaction transaction = fm.beginTransaction();
+            transaction.replace(R.id.screen_container, fragment);
+            transaction.commit();
+            transaction.addToBackStack(null);
+            removeFragment(this);
+
+        });
 
 
         cancelSavePictureButton.setOnClickListener(view1->{
