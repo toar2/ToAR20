@@ -43,46 +43,52 @@
         android:layout_height="0dp"
         android:layout_weight="0.3"
         android:orientation="horizontal">
+
         <Button
             android:id="@+id/cancel_save_picture_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_margin="@dimen/back_button_margin_top"
             android:layout_weight="0.4"
-            android:text="cancel"
-            android:textColor="@color/black"
+            android:background="@color/button_color"
             android:drawableTop="@drawable/icons_cancel_24"
-            android:background="@color/button_color"
-            android:layout_margin="@dimen/back_button_margin_top"
-            />
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.2"
-            android:visibility="invisible"/>
+            android:text="cancel"
+            android:textColor="@color/black" />
+
         <Button
-            android:id="@+id/save_picture_button"
+            android:id="@+id/sendMemoryButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.4"
-            android:text="save"
-            android:textColor="@color/button_text_color"
-            android:drawableTop="@drawable/icons_save_24"
-            android:background="@color/button_color"
             android:layout_margin="@dimen/back_button_margin_top"
-            />
+            android:layout_weight="0.4"
+            android:background="@color/button_color"
+            android:drawableTop="@drawable/icons_forward_24"
+            android:text="send Memory"
+            android:textColor="@color/black" />
 
         <Button
             android:id="@+id/share_picture_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_margin="@dimen/back_button_margin_top"
             android:layout_weight="0.4"
+            android:background="@color/button_color"
+            android:drawableTop="@drawable/icons_share_24"
             android:text="share"
             android:textColor="@color/button_text_color"
-            android:drawableTop="@drawable/icons_share_24"
-            android:background="@color/button_color"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/save_picture_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_margin="@dimen/back_button_margin_top"
-            android:visibility="gone"
-            />
+            android:layout_weight="0.4"
+            android:background="@color/button_color"
+            android:drawableTop="@drawable/icons_save_24"
+            android:text="save"
+            android:textColor="@color/button_text_color" />
+
     </LinearLayout>
 
 </LinearLayout>

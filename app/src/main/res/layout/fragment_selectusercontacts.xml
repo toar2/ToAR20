@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/application_background_color">
+
+    <TextView
+        android:id="@+id/contactsFragmentHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:text="Choose Contacts "
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/contactsScrollView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ScrollView
+        android:id="@+id/contactsScrollView"
+        android:layout_width="358dp"
+        android:layout_height="482dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:background="@color/application_background_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/contactsFragmentHeading">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <!--            <android.support.v7.widget.CardView-->
+            <!--                android:id="@+id/contactCardView"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginTop="10sp">-->
+
+            <!--                <RelativeLayout-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:longClickable="false"-->
+            <!--                    android:padding="16dp">-->
+
+
+            <!--                    <TextView-->
+            <!--                        android:id="@+id/contact_name"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="34dp"-->
+            <!--                        android:layout_alignParentLeft="true"-->
+            <!--                        android:layout_alignParentTop="true"-->
+            <!--                        android:layout_marginEnd="106dp"-->
+            <!--                        android:layout_toStartOf="@+id/imageButton"-->
+            <!--                        android:text="Aman Ullah"-->
+            <!--                        android:textSize="30sp" />-->
+
+            <!--                    <TextView-->
+            <!--                        android:id="@+id/contact_username"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_below="@+id/contact_name"-->
+            <!--                        android:layout_alignParentLeft="true"-->
+
+            <!--                        android:layout_marginLeft="16dp"-->
+            <!--                        android:layout_marginTop="6dp"-->
+            <!--                        android:layout_marginEnd="175dp"-->
+            <!--                        android:layout_toStartOf="@+id/imageButton"-->
+            <!--                        android:text="am0n1234" />-->
+
+            <!--                    <ImageButton-->
+            <!--                        android:id="@+id/imageButton"-->
+            <!--                        android:layout_width="59dp"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_alignParentEnd="true"-->
+            <!--                        android:layout_marginEnd="8dp"-->
+            <!--                        android:background="@color/button_text_color"-->
+            <!--                        android:backgroundTint="#FFFFFF"-->
+            <!--                        android:tint="#03A9F4"-->
+            <!--                        app:srcCompat="@drawable/icon_messageContact" />-->
+
+            <!--                </RelativeLayout>-->
+
+            <!--            </android.support.v7.widget.CardView>-->
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contactsScrollView"
+        app:layout_constraintVertical_bias="0.5">
+
+        <Button
+            android:id="@+id/cancelButton_SelectUsersFragment"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="20dp"
+            android:drawableRight="@drawable/ic_close"
+            android:text="@string/__arcore_cancel" />
+
+        <Button
+            android:id="@+id/sendButton_selectUsersFragment"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:drawableRight="@drawable/icons_forward_24"
+            android:text="Send " />
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

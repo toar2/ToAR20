@@ -45,6 +45,7 @@ public class UserPictureCapturePreviewDetailFragment extends Fragment {
     private Button cancelSavePictureButton;
     private Button savePictureButton;
     private Button sharePictureButton;
+    private Button sendPictureAsMemoryButton;
 
     private boolean shareImage = false;
     private Bitmap image;
@@ -124,15 +125,15 @@ public class UserPictureCapturePreviewDetailFragment extends Fragment {
         commentEditText = view.findViewById(R.id.picture_comment_edittext);
 
 
-        if(this.shareImage == true){
-            commentEditText.setVisibility(View.INVISIBLE);
-        }
-
         cancelSavePictureButton = view.findViewById(R.id.cancel_save_picture_button);
 
         savePictureButton = view.findViewById(R.id.save_picture_button);
 
         sharePictureButton = view.findViewById(R.id.share_picture_button);
+
+        sendPictureAsMemoryButton = view.findViewById(R.id.sendMemoryButton);
+
+
 
 
         cancelSavePictureButton.setOnClickListener(view1->{
@@ -140,8 +141,11 @@ public class UserPictureCapturePreviewDetailFragment extends Fragment {
         });
 
         if(this.shareImage == true){
+
             sharePictureButton.setVisibility(view.VISIBLE);
             savePictureButton.setVisibility(view.GONE);
+            sendPictureAsMemoryButton.setVisibility(view.GONE);
+            commentEditText.setVisibility(View.INVISIBLE);
 
             sharePictureButton.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -193,7 +197,11 @@ public class UserPictureCapturePreviewDetailFragment extends Fragment {
             });
 
 
+            sendPictureAsMemoryButton.setOnClickListener(view1 ->{
 
+                Toast.makeText(getContext(), "user wants to share memory", Toast.LENGTH_LONG).show();
+
+            });
 
         }
 
