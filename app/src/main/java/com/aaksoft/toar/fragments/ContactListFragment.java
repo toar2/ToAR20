@@ -43,6 +43,12 @@ public class ContactListFragment extends Fragment {
         contactListAdapter adapter = new contactListAdapter(userContacts, getActivity());
         addNewContactButton.setOnClickListener(v ->{
 
+            addNewContact newContactFragment = new addNewContact();
+            FragmentManager Fm = getFragmentManager();
+            FragmentTransaction ft = Fm.beginTransaction();
+            ft.replace(R.id.screen_container, newContactFragment);
+            ft.commit();
+            removeFragment(this);
 
 
 

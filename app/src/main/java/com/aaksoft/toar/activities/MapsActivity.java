@@ -1926,10 +1926,11 @@ public class MapsActivity extends FragmentActivity implements
         FirebaseDatabase.getInstance().getReference().child("users").child(getUniqueUserID()).child("contacts").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Toast.makeText(getApplicationContext(), "No of contacts: " + Long.toString(dataSnapshot.getChildrenCount()), Toast.LENGTH_LONG).show();
+//                Toast.makeText(getApplicationContext(), "No of contacts: " + Long.toString(dataSnapshot.getChildrenCount()), Toast.LENGTH_LONG).show();
                 for (DataSnapshot singleContact: dataSnapshot.getChildren()){
 
                     contact latestContact = singleContact.getValue(contact.class);
+//                    alertDisplayer("hh", singleContact.getValue().toString());
                     userContacts.add(latestContact);
 
 
@@ -2079,6 +2080,7 @@ public class MapsActivity extends FragmentActivity implements
 
                     setCurrentUserPojo(userPojo);
                     setUserName(userPojo.getName());
+//                    alertDisplayer("pok", currentUserPojo.getId());
 
 
                     AppSetting userProfileIdSetting = new AppSetting("user_profile", userPojo.getId());
@@ -2167,6 +2169,7 @@ public class MapsActivity extends FragmentActivity implements
     }
     public void goToMessanger(View view){
         String contactId = (String)view.getTag();
+        String uName = "";
         String jointChatNode;
         try {
             jointChatNode = getJointNode.getUniqueNode(uniqueUserID, contactId);
@@ -2176,10 +2179,17 @@ public class MapsActivity extends FragmentActivity implements
             Toast.makeText(getApplicationContext(), "No such algorithm exception occured!", Toast.LENGTH_LONG).show();
             return;
         }
-        startActivity(new Intent(getApplicationContext(), chatActivity.class).putExtra("chatNode", (String)jointChatNode));
+        Intent i = new Intent(getApplicationContext(), chatActivity.class).putExtra("chatNode", (String)jointChatNode);
 
+        for(int j = 0 ; j <userContacts.size() ; j ++ ){
+            if(userContacts.get(j).id.equals(contactId)){
+                uName = userContacts.get(j).name;
+            }
+        }
 
-//        Toast.makeText(getApplicationContext(), "Awaiting implementation", Toast.LENGTH_LONG);
+        i.putExtra("uName", uName);
+        startActivity(i);
+
 
     }
 

@@ -165,9 +165,5 @@ public class MenuFragment extends Fragment {
         fragmentTransaction.commit();
     }
 
-    public void addNewContact(){
-
-    }
-
 
 }

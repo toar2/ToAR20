@@ -92,6 +92,8 @@ public class chatActivity extends AppCompatActivity
     // Firebase instance variables
 
 
+
+
     private FirebaseAuth mFirebaseAuth;                                                             // reference of firebase authentication
     private FirebaseUser mFirebaseUser;                                                             // reference of firebase user
 
@@ -101,7 +103,17 @@ public class chatActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+
+
+
         setContentView(R.layout.activity_chat);
+        setTitle(getIntent().getStringExtra("uName"));
+
+
+
+
         uniqueChatNode = getIntent().getStringExtra("chatNode");
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         // Set default username is anonymous.
