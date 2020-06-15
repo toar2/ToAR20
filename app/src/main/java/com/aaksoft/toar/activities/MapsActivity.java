@@ -3,15 +3,12 @@
     on
     25 June, 2018
  */
-
 package com.aaksoft.toar.activities;
-
 /*
     Created By Aasharib
     on
     16 June, 2018
  */
-
 import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -198,7 +195,7 @@ public class MapsActivity extends FragmentActivity implements
     private Button cameraModeButton;
     private Button directionApiButton;
     private Button testButton;
-    private Button cancelNearbyRenderButton;
+
 
     private Button menuButton;
     public Button takePicButton;
@@ -413,33 +410,8 @@ public class MapsActivity extends FragmentActivity implements
         });
 
 
-        testButton =  findViewById(R.id.buttonTest1);
-        testButton.setVisibility(View.GONE);
+
         cameraModeButton.setVisibility(View.VISIBLE);
-
-        if (testMode == 1) {
-            testButton.setVisibility(View.VISIBLE);
-            cameraModeButton.setVisibility(View.GONE);
-
-        }
-
-        testButton.setOnClickListener(view1 -> {
-
-            if(currentUser!= null) {
-                synchronizeLocalDbWithCloud();
-            }
-            else{
-                // TODO: Alert user to login before trying to sync local db with cloud
-                alertDisplayer("Login To Continue", "Please login before attempting to sync local db with cloud");
-            }
-                });
-
-
-
-
-
-
-
 
         directionApiButton =  findViewById(R.id.buttonDirectionApi);
         directionApiButton.setOnClickListener(view1 -> {
@@ -1874,8 +1846,6 @@ public class MapsActivity extends FragmentActivity implements
     }
 
 
-
-
     public void downloadCloudImages(){
 
         // Below is an attempt to implement download cloud images functionality
@@ -2037,9 +2007,6 @@ public class MapsActivity extends FragmentActivity implements
     }
 
 
-
-
-
     // runs whenever a user signs in, signs up, or signs out.
 
     public void refreshCurrentUser(){
@@ -2056,17 +2023,12 @@ public class MapsActivity extends FragmentActivity implements
             // Creating the references for our user to access his/her profile information, ImagesDatabase, and
             // Images from the cloud
             this.usersDatabaseReference = FirebaseDatabase.getInstance().getReference("users").child(getUniqueUserID());
-
-
             this.usersImagesDatabaseReference = usersDatabaseReference.child("userImages");
-
 
             // storage reference will remain the same
             this.userImagesStorageReference = FirebaseStorage.getInstance().getReference("usersImages/" + getUniqueUserID()+"/");
 
-
-
-
+            // getting all users information
             usersDatabaseReference.child("profileInformation").addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -2074,6 +2036,7 @@ public class MapsActivity extends FragmentActivity implements
                     // This pojo recieves and stores all of the user data from the cloud
 
                     Users userPojo = dataSnapshot.getValue(Users.class);
+//                    dataSnapshot.child("contacts").getValue()
 
                     // The following operations will Make relavent changes to the
                     // maps activity when the user signs in as well update the
@@ -2081,6 +2044,7 @@ public class MapsActivity extends FragmentActivity implements
 
                     setCurrentUserPojo(userPojo);
                     setUserName(userPojo.getName());
+
 //                    alertDisplayer("pok", currentUserPojo.getId());
 
 
@@ -2119,6 +2083,8 @@ public class MapsActivity extends FragmentActivity implements
             setUniqueUserID("1");
             setUserName("local");
             isUserSignedIn = false;
+            userContacts = new ArrayList<contact>();            // re init
+
             localDatabaseHelper.clearImagesDatabase();           // Clears the whole images database
             localDatabaseHelper.clearSettingsDatabase();                // Clears the whole settings database
             userSignStatusButton.setText("Not Logged In");
@@ -2168,6 +2134,10 @@ public class MapsActivity extends FragmentActivity implements
         });
         ok.show();
     }
+
+
+    // function to intiate messaganger
+
     public void goToMessanger(View view){
         String contactId = (String)view.getTag();
         String uName = "";
@@ -2197,13 +2167,12 @@ public class MapsActivity extends FragmentActivity implements
     public void sendMemoriesToContacts(Memory newMemory, ArrayList<String> contactsToSendMemoriesTo){
 
         for(int i =0 ; i < contactsToSendMemoriesTo.size(); i++){
+            // posts memories to users contacts
             FirebaseDatabase.getInstance().getReference().child("users").child(contactsToSendMemoriesTo.get(i)).child("memories").push().setValue(newMemory);
+
         }
+        Toast.makeText(getApplicationContext(), "Memories Sent to Selected Contacts", Toast.LENGTH_LONG).show();
     }
-
-
-
-
 
 }
 

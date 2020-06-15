@@ -147,14 +147,14 @@ public class UserPictureCapturePreviewDetailFragment extends Fragment {
             savePictureButton.setVisibility(view.GONE);
             sendPictureAsMemoryButton.setVisibility(view.GONE);
             commentEditText.setVisibility(View.INVISIBLE);
-
             sharePictureButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
 
+
                     Bitmap mBitmap = image;
 
-                    String path = MediaStore.Images.Media.insertImage(getActivity().getContentResolver(), mBitmap, "temporaryImage",null);
+                    String path = MediaStore.Images.Media.insertImage(getActivity().getContentResolver(), mBitmap, "temporaryImage", null);
                     Uri uri = Uri.parse(path);
 
                     Intent intent = new Intent(Intent.ACTION_SEND);
@@ -162,8 +162,14 @@ public class UserPictureCapturePreviewDetailFragment extends Fragment {
                     intent.putExtra(Intent.EXTRA_STREAM, uri);
                     startActivity(Intent.createChooser(intent, "Share Image"));
 
+
                 }
+
+
             });
+
+
+
         }
         else{
             sharePictureButton.setVisibility(view.GONE);
@@ -198,8 +204,10 @@ public class UserPictureCapturePreviewDetailFragment extends Fragment {
             });
 
             sendPictureAsMemoryButton.setOnClickListener(view1->{
-
-
+                if(((MapsActivity)getActivity()).currentUser == null){
+                    Toast.makeText(getActivity().getApplicationContext(), "Please login to continue", Toast.LENGTH_LONG).show();
+                    return;
+                }
                 description = commentEditText.getText().toString();
                 selectContactFragment fragment = selectContactFragment.newInstanceForSendMemories(image, lat, lng, description);
                 FragmentManager fm = getFragmentManager();
@@ -211,6 +219,10 @@ public class UserPictureCapturePreviewDetailFragment extends Fragment {
             });
         }
         return view;
+
+
+
+
     }
 
     protected void removeFragment(Fragment fragment) {

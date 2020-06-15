@@ -166,11 +166,7 @@ public class augmentModels extends AppCompatActivity {
         setBackground(arrayView[0].getId());
     }
 
-//    @Override
-//    public void onBackPressed(){
-//        super.onBackPressed();
-//        this.finish();
-//    }
+
     private void setupModel() {
 
 
