@@ -156,7 +156,9 @@ public class selectContactFragment extends Fragment {
                                         Uri uri = r.getResult();
                                         newMemory.setImageUri(uri.toString());
                                         ((MapsActivity)getActivity()).sendMemoriesToContacts(newMemory, checkedContactIds);
-                                        removeFragment(getParentFragment());
+//                                        removeFragment(getParentFragment());
+                                        cancelButton.performClick();
+
                                     }
                                     else{
                                         Log.d("Dp url setting failed!", "Failed to retrieve user photo url");

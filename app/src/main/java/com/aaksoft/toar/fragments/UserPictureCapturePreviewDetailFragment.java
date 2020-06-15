@@ -196,6 +196,7 @@ public class UserPictureCapturePreviewDetailFragment extends Fragment {
                     Toast.makeText(getContext(), "Error Occured during saving the image", Toast.LENGTH_LONG).show();
                 }
             });
+
             sendPictureAsMemoryButton.setOnClickListener(view1->{
 
 
@@ -205,7 +206,7 @@ public class UserPictureCapturePreviewDetailFragment extends Fragment {
                 FragmentTransaction transaction = fm.beginTransaction();
                 transaction.replace(R.id.screen_container, fragment);
                 transaction.commit();
-                transaction.addToBackStack(null);
+//                transaction.addToBackStack(null);
                 removeFragment(this);
             });
         }
