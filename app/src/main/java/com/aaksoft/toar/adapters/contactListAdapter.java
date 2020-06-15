@@ -38,6 +38,7 @@ public class contactListAdapter extends RecyclerView.Adapter<contactListAdapter.
         this.userContactList = persons;
         con = c;
         this.selectContactsScreen = selectContactsScreen;
+        checkBoxesList = new ArrayList<CheckBox>();
 
     }
 

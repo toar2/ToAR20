@@ -26,6 +26,7 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.location.Location;
 
+import com.aaksoft.toar.firebase.Memory;
 import com.aaksoft.toar.firebase.Users;
 import com.aaksoft.toar.firebase.contact;
 import com.aaksoft.toar.firebase.getJointNode;
@@ -1298,7 +1299,7 @@ public class MapsActivity extends FragmentActivity implements
     }
 
 
-    private String generateUniqueImageName(){
+    public String generateUniqueImageName(){
         String date = new SimpleDateFormat("yyyyMMddHHmmss", java.util.Locale.getDefault()).format(new Date());
         String uniqueFileName = uniqueUserID + "_" + date + "_image.jpg";
         return uniqueFileName;
@@ -2192,6 +2193,16 @@ public class MapsActivity extends FragmentActivity implements
 
 
     }
+
+    public void sendMemoriesToContacts(Memory newMemory, ArrayList<String> contactsToSendMemoriesTo){
+
+        for(int i =0 ; i < contactsToSendMemoriesTo.size(); i++){
+            FirebaseDatabase.getInstance().getReference().child("users").child(contactsToSendMemoriesTo.get(i)).child("memories").push().setValue(newMemory);
+        }
+    }
+
+
+
 
 
 }

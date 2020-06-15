@@ -91,6 +91,11 @@ public class augmentModels extends AppCompatActivity {
 
         arFragment =(ArFragment)getSupportFragmentManager().findFragmentById(R.id.sceneform_ux_fragment);
 
+        // hiding the instruction view on our arfragment
+        arFragment.getPlaneDiscoveryController().hide();
+        arFragment.getPlaneDiscoveryController().setInstructionView(null);
+
+
 
         informationButton = (Button)findViewById(R.id.infoButton);
         takePictureButton = (Button)findViewById(R.id.picturebutton);

@@ -134,17 +134,7 @@ public class UserPictureCapturePreviewDetailFragment extends Fragment {
         sendPictureAsMemoryButton = view.findViewById(R.id.sendMemoryButton);
 
 
-        sendPictureAsMemoryButton.setOnClickListener(view1->{
 
-            selectContactFragment fragment = selectContactFragment.newInstanceForSendMemories(image, owner_id, lat, lng);
-            FragmentManager fm = getFragmentManager();
-            FragmentTransaction transaction = fm.beginTransaction();
-            transaction.replace(R.id.screen_container, fragment);
-            transaction.commit();
-            transaction.addToBackStack(null);
-            removeFragment(this);
-
-        });
 
 
         cancelSavePictureButton.setOnClickListener(view1->{
@@ -206,20 +196,19 @@ public class UserPictureCapturePreviewDetailFragment extends Fragment {
                     Toast.makeText(getContext(), "Error Occured during saving the image", Toast.LENGTH_LONG).show();
                 }
             });
+            sendPictureAsMemoryButton.setOnClickListener(view1->{
 
 
-            sendPictureAsMemoryButton.setOnClickListener(view1 ->{
-
-                Toast.makeText(getContext(), "user wants to share memory", Toast.LENGTH_LONG).show();
-
+                description = commentEditText.getText().toString();
+                selectContactFragment fragment = selectContactFragment.newInstanceForSendMemories(image, lat, lng, description);
+                FragmentManager fm = getFragmentManager();
+                FragmentTransaction transaction = fm.beginTransaction();
+                transaction.replace(R.id.screen_container, fragment);
+                transaction.commit();
+                transaction.addToBackStack(null);
+                removeFragment(this);
             });
-
         }
-
-
-
-
-
         return view;
     }
 
