@@ -1568,10 +1568,10 @@ public class MapsActivity extends FragmentActivity implements
                 Button closeButton = (Button)r.getView().findViewById(R.id.memoryRenderCloseButton);
 
 
-                Glide.with(getApplicationContext()).load(senderContact.photoURL).into(memoryPicture);
+                Glide.with(getApplicationContext()).load(memoryToRender.getImageUri()).into(memoryPicture);
 
                 if(!senderContact.photoURL.equals(null)){
-                    Glide.with(getApplicationContext()).load(memoryToRender.getImageUri()).into(contactDp);
+                    Glide.with(getApplicationContext()).load(senderContact.photoURL).into(contactDp);
                 }
 
 
