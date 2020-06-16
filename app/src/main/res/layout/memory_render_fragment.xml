@@ -61,7 +61,7 @@
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="422dp"
-        android:layout_height="500">
+        android:layout_height="554dp">
 
         <ImageView
             android:id="@+id/memoryRenderImageView"
