@@ -1,6 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
 
-</android.support.constraint.ConstraintLayout>
+    android:background="#4ADAC946"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/contactCardView"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        app:cardBackgroundColor="#40E7DB7A">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|center_horizontal|center_vertical"
+            android:orientation="horizontal">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/memoryRenderDpImageView"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center|left"
+                android:src="@drawable/ic_account_circle_black_36dp" />
+
+            <LinearLayout
+                android:layout_width="256dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/memoryRenderContactName"
+                    android:layout_width="318dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:text="Aman Ullah"
+                    android:textSize="30sp" />
+
+                <TextView
+                    android:id="@+id/memoryRenderUsername"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="73dp"
+                    android:text="am0n1234" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="424dp">
+
+        <ImageView
+            android:id="@+id/memoryRenderImageView"
+            android:layout_width="339dp"
+            android:layout_height="413dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@color/black" />
+    </android.support.constraint.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/memoryRenderImageDescription"
+        android:layout_width="match_parent"
+        android:layout_height="74dp"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/memoryRenderCloseButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Close Memory"
+        android:textSize="20sp" />
+
+
+</LinearLayout>

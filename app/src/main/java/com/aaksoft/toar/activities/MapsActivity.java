@@ -24,6 +24,7 @@ import com.aaksoft.toar.firebase.Users;
 import com.aaksoft.toar.firebase.contact;
 import com.aaksoft.toar.firebase.getJointNode;
 import com.aaksoft.toar.mapbox.memoryMarker;
+import com.bumptech.glide.Glide;
 import com.google.android.gms.location.LocationListener;
 
 import android.net.ConnectivityManager;
@@ -158,6 +159,7 @@ import uk.co.appoly.arcorelocation.LocationScene;
 import uk.co.appoly.arcorelocation.utils.ARLocationPermissionHelper;
 
 import org.apache.commons.io.FileUtils;
+import org.w3c.dom.Text;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -266,6 +268,11 @@ public class MapsActivity extends FragmentActivity implements
     private ViewRenderable memoryRenderable;
 
     private Anchor anchorLocationHistoryView;
+    private AnchorNode anchorNode;
+
+
+
+
 
     int imageRenderableDistance = 100;
     ArrayList<Bitmap> imagesToBeShown;
@@ -602,6 +609,10 @@ public class MapsActivity extends FragmentActivity implements
                                             String displayString = "Sent By: " + memorySender.name + "\nDistance To Memory: " + distance;
                                             if(distance < imageRenderableDistance){
                                                 Toast.makeText(getApplicationContext(), displayString, Toast.LENGTH_SHORT).show();
+
+                                                makeRenderableMemory(memoryOfThisMarker, memorySender);
+
+
                                                 marker.setIcon(iconFactory.fromResource(R.drawable.memoryicongreen));
                                             }
                                             else{
@@ -683,17 +694,23 @@ public class MapsActivity extends FragmentActivity implements
         fragment.setOnTapArPlaneListener(
                 (HitResult hitResult, Plane plane, MotionEvent motionEvent) -> {
                     //makeRenderablePicture();
-                    if (viewRenderable == null) {
+//                    if (viewRenderable == null) {
+//                        return;
+//                    }
+                    if (memoryRenderable == null) {
                         return;
                     }
-                    anchorLocationHistoryView = hitResult.createAnchor();
+
+                    anchorLocationHistoryView = hitResult.createAnchor();                                       // anchor
                     AnchorNode anchorNode = new AnchorNode(anchorLocationHistoryView);
                     anchorNode.setParent(fragment.getArSceneView().getScene());
 
                     // Create the transformable andy and add it to the anchor.
                     TransformableNode andy = new TransformableNode(fragment.getTransformationSystem());
                     andy.setParent(anchorNode);
-                    andy.setRenderable(viewRenderable);
+//                    andy.setRenderable(viewRenderable);
+                    andy.setRenderable(memoryRenderable);
+
                     andy.select();
 
                 });
@@ -1534,9 +1551,39 @@ public class MapsActivity extends FragmentActivity implements
     }
 
 
-    public void makeRenderableMemory(Memory memoryToRender){
+    public void makeRenderableMemory(Memory memoryToRender, contact senderContact){
+
+        Toast.makeText(getApplicationContext(),"Creating renderable for this memory", Toast.LENGTH_LONG).show();
+    ViewRenderable.builder()
+            .setView((getApplicationContext()), R.layout.memory_render_fragment)
+            .build()
+            .thenAccept(r -> {
+                memoryRenderable = r;
+
+                ImageView contactDp = (ImageView)r.getView().findViewById(R.id.memoryRenderDpImageView);
+                ImageView memoryPicture = (ImageView)r.getView().findViewById(R.id.memoryRenderImageView);
+                TextView contactName = (TextView)r.getView().findViewById(R.id.memoryRenderContactName);
+                TextView contactUsername = (TextView)r.getView().findViewById(R.id.memoryRenderUsername);
+                TextView imageDescription = (TextView)r.getView().findViewById(R.id.memoryRenderImageDescription);
+                Button closeButton = (Button)r.getView().findViewById(R.id.memoryRenderCloseButton);
 
 
+                Glide.with(getApplicationContext()).load(senderContact.photoURL).into(memoryPicture);
+
+                if(!senderContact.photoURL.equals(null)){
+                    Glide.with(getApplicationContext()).load(memoryToRender.getImageUri()).into(contactDp);
+                }
+
+
+                contactName.setText(senderContact.name);
+                contactUsername.setText(senderContact.username);
+                imageDescription.setText(memoryToRender.getDescription());
+                closeButton.setOnClickListener(v->{
+                    anchorNode.setParent(null);
+                });
+                Toast.makeText(getApplicationContext(), "Renderable Created!", Toast.LENGTH_LONG).show();
+
+            });
 
 
 
