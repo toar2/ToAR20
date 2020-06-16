@@ -136,6 +136,7 @@ public class augmentModels extends AppCompatActivity {
                     anchorNode = new AnchorNode(anchor);
                     anchorNode.setParent(arFragment.getArSceneView().getScene());
                     isModelBeingAugmented = true;
+
                     createModel(anchorNode, selected);
                     optionsPanel.setVisibility(View.VISIBLE);
             }

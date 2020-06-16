@@ -263,11 +263,14 @@ public class MapsActivity extends FragmentActivity implements
 
     //Location Based History Variables
     private boolean isLocationHistoryEnabled;
+    private boolean isMemoryRenderableEnabled;
+    private boolean isAugmentationHappening;
     public LocalDatabaseHelper localDatabaseHelper;
     private ViewRenderable viewRenderable;
     private ViewRenderable memoryRenderable;
 
-    private Anchor anchorLocationHistoryView;
+
+
     private AnchorNode anchorNode;
 
 
@@ -386,6 +389,11 @@ public class MapsActivity extends FragmentActivity implements
         });
 
 
+        isLocationHistoryEnabled = false;
+        isMemoryRenderableEnabled = false;
+        isAugmentationHappening = false;
+
+
 
         menuButton =  findViewById(R.id.menuButton);
         menuButton.setOnClickListener(view1 -> {
@@ -434,18 +442,17 @@ public class MapsActivity extends FragmentActivity implements
 
         setSettingVariables(localDatabaseHelper);
 
-        if(isLocationHistoryEnabled) {
-            userSignStatusButton.setVisibility(View.VISIBLE);
-            if (!userName.equals("") && !userName.equals("local") && userName != null) {
-                userSignStatusButton.setText("Signed in as: " + userName);
-                userSignStatusButton.setBackgroundResource(R.drawable.user_login_status_green_tv);
-                userSignStatusButton.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.black));
-                //userSigninStatusTV.setBackgroundColor("#0f0");
-            } else {
-                userSignStatusButton.setText("Not Logged In");
-                userSignStatusButton.setBackgroundResource(R.drawable.user_login_status_red_tv);
-                userSignStatusButton.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
-            }
+
+        userSignStatusButton.setVisibility(View.VISIBLE);
+        if (!userName.equals("") && !userName.equals("local") && userName != null) {
+            userSignStatusButton.setText("Signed in as: " + userName);
+            userSignStatusButton.setBackgroundResource(R.drawable.user_login_status_green_tv);
+            userSignStatusButton.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.black));
+            //userSigninStatusTV.setBackgroundColor("#0f0");
+        } else {
+            userSignStatusButton.setText("Not Logged In");
+            userSignStatusButton.setBackgroundResource(R.drawable.user_login_status_red_tv);
+            userSignStatusButton.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
         }
 
         iconFactory = IconFactory.getInstance(this);
@@ -572,6 +579,7 @@ public class MapsActivity extends FragmentActivity implements
                         }
                         else{
                             MapsActivity.this.deselectDestination();
+                            navigationMode(false);
                         }
                     }
                 });
@@ -693,23 +701,40 @@ public class MapsActivity extends FragmentActivity implements
         // TODO: Fix the following
         fragment.setOnTapArPlaneListener(
                 (HitResult hitResult, Plane plane, MotionEvent motionEvent) -> {
-                    //makeRenderablePicture();
-//                    if (viewRenderable == null) {
-//                        return;
-//                    }
-                    if (memoryRenderable == null) {
+
+                    if (!isMemoryRenderableEnabled && !isLocationHistoryEnabled) {                          // only proceeding to augment if either is enabled
                         return;
                     }
 
-                    anchorLocationHistoryView = hitResult.createAnchor();                                       // anchor
-                    AnchorNode anchorNode = new AnchorNode(anchorLocationHistoryView);
+                    if(isAugmentationHappening){
+                        anchorNode.setParent(null);
+                    }
+
+                    Anchor anchor = hitResult.createAnchor();
+                    anchorNode = new AnchorNode(anchor);
                     anchorNode.setParent(fragment.getArSceneView().getScene());
 
                     // Create the transformable andy and add it to the anchor.
                     TransformableNode andy = new TransformableNode(fragment.getTransformationSystem());
-                    andy.setParent(anchorNode);
-//                    andy.setRenderable(viewRenderable);
-                    andy.setRenderable(memoryRenderable);
+
+
+                    if(isMemoryRenderableEnabled){
+                        if(memoryRenderable!=null){
+                            isAugmentationHappening = true;
+                            andy.setParent(anchorNode);
+                            andy.setRenderable(memoryRenderable);
+                        }
+
+                    }
+                    else{
+                        if(viewRenderable!=null){
+                            isAugmentationHappening = true;
+                            andy.setParent(anchorNode);
+                            andy.setRenderable(viewRenderable);
+                        }
+
+                    }
+
 
                     andy.select();
 
@@ -1336,8 +1361,10 @@ public class MapsActivity extends FragmentActivity implements
         setMemoryMarkers();
         navigationMode(false);
         setDestinationSelected(false);
+
         if(navigationMapRoute!=null) {
             navigationMapRoute.removeRoute();
+            navigationMode = false;
         }
 
     }
@@ -1551,7 +1578,13 @@ public class MapsActivity extends FragmentActivity implements
     }
 
 
+
     public void makeRenderableMemory(Memory memoryToRender, contact senderContact){
+
+        // disable user location history when memory renderable is asked to be created
+
+        isLocationHistoryEnabled = false;
+        isMemoryRenderableEnabled = true;
 
         Toast.makeText(getApplicationContext(),"Creating renderable for this memory", Toast.LENGTH_LONG).show();
     ViewRenderable.builder()
@@ -1590,8 +1623,12 @@ public class MapsActivity extends FragmentActivity implements
     }
 
 
-
     public void makeRenderablePicture(){
+
+        isLocationHistoryEnabled = true;
+        isMemoryRenderableEnabled = false;
+
+
         ViewRenderable.builder()
                 .setView(getApplicationContext(), R.layout.image_ar_display_layout)
                 .build()
@@ -1739,13 +1776,25 @@ public class MapsActivity extends FragmentActivity implements
 
                     Button closeImageArRenderButton = renderable.getView().findViewById(R.id.closeImageArRenderButton);
                     closeImageArRenderButton.setOnClickListener(view1->{
-                        if(anchorLocationHistoryView!=null){
-                            anchorLocationHistoryView.detach();
-                        }
+
+                            anchorNode.setParent(null);
+
                     });
 
                 });
     }
+
+
+    public void toggleNavigation(){
+
+        isMemoryRenderableEnabled = false;
+        isLocationHistoryEnabled = true;
+
+        Toast.makeText(getApplicationContext(),"User Location History Enabled",Toast.LENGTH_LONG).show();
+        loadImageInformation();
+        makeRenderablePicture();
+    }
+
 
 
     private void showCurImageMarker(LatLng curImageLatLng, Icon icon) {
@@ -2259,6 +2308,11 @@ public class MapsActivity extends FragmentActivity implements
 
         else{
             // Changes to make if currently there is not user signed in
+            userSignStatusButton.setText("Not Logged In");
+            userSignStatusButton.setBackgroundResource(R.drawable.user_login_status_red_tv);
+            userSignStatusButton.setTextColor(ContextCompat.getColor(getApplicationContext(),R.color.white));
+            isLocationHistoryEnabled = false;               // disable location history
+            isMemoryRenderableEnabled = false;
             currentUserPojo = null;
             setUniqueUserID("1");
             setUserName("local");
@@ -2273,8 +2327,8 @@ public class MapsActivity extends FragmentActivity implements
             userSignStatusButton.setText("Not Logged In");
             userSignStatusButton.setBackgroundResource(R.drawable.user_login_status_red_tv);
             userSignStatusButton.setTextColor(ContextCompat.getColor(getApplicationContext(),R.color.white));
-            loadImageInformation();
-            makeRenderablePicture();
+//            loadImageInformation();
+//            makeRenderablePicture();
 
         }
 

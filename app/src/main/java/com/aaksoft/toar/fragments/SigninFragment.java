@@ -121,7 +121,7 @@ public class SigninFragment extends Fragment {
             FragmentManager fragmentManager = getFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
             fragmentTransaction.replace(R.id.screen_container, signupFragment);    //add can be used if we want to go to root fragment directly
-            fragmentTransaction.addToBackStack(null);
+//            fragmentTransaction.addToBackStack(null);
             fragmentTransaction.commit();
             ((MapsActivity) getActivity()).isMenuBeingDisplayed = false;
             removeFragment(this);

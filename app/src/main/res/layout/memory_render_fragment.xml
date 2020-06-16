@@ -61,12 +61,12 @@
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="422dp"
-        android:layout_height="554dp">
+        android:layout_height="438dp">
 
         <ImageView
             android:id="@+id/memoryRenderImageView"
-            android:layout_width="339dp"
-            android:layout_height="413dp"
+            android:layout_width="321dp"
+            android:layout_height="307dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -75,8 +75,8 @@
 
         <TextView
             android:id="@+id/memoryRenderImageDescription"
-            android:layout_width="343dp"
-            android:layout_height="123dp"
+            android:layout_width="323dp"
+            android:layout_height="131dp"
             android:background="#FFFFFF"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"

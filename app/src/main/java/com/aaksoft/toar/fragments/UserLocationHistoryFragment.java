@@ -86,8 +86,11 @@ public class UserLocationHistoryFragment extends Fragment {
                     AsyncTask.execute(new Runnable() {
                         @Override
                         public void run() {
+
                             AppSetting locationHistoryRenderableRangeSetting = new AppSetting("loc_hist_enabled","true");
                             locationHistoryRenderableRangeSetting.insertOrUpdateSettingToLocalDb(((MapsActivity)getActivity()).localDatabaseHelper);
+
+
                         }
                     });
                     ((MapsActivity)getActivity()).userSignStatusButton.setVisibility(View.VISIBLE);

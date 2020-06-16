@@ -20,6 +20,7 @@ import android.widget.Toast;
 import com.aaksoft.toar.R;
 import com.aaksoft.toar.activities.MapsActivity;
 import com.aaksoft.toar.activities.augmentModels;
+import com.google.firebase.auth.FirebaseAuth;
 
 /*
     Handles the Application menu
@@ -35,6 +36,12 @@ public class MenuFragment extends Fragment {
     Button navigationOptionButton;
     Button helpButton;
     Button uploadImagesToCloudbutton;
+
+    Button signupbutton;
+    Button signinbutton;
+    Button signoutbutton;
+
+
     //Button previewBuildingModelButton;
 
     public MenuFragment() {
@@ -58,6 +65,28 @@ public class MenuFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_menu, container, false);
+
+
+
+        signinbutton = view.findViewById(R.id.menusigninbutton);
+        signoutbutton = view.findViewById(R.id.menusignoutbutton);
+        signupbutton = view.findViewById(R.id.menusignupbutton);
+
+        if(((MapsActivity)getActivity()).isUserSignedIn){
+            signoutbutton.setVisibility(View.VISIBLE);
+            signinbutton.setVisibility(view.GONE);
+            signupbutton.setVisibility(view.GONE);
+        }
+        else{
+            // if user is signed in, make sign out button visible only
+
+            signoutbutton.setVisibility(View.GONE);
+            signinbutton.setVisibility(view.VISIBLE);
+            signupbutton.setVisibility(view.VISIBLE);
+
+        }
+
+
 
         backButton = view.findViewById(R.id.backButtonMenuFragment);
         backButton.setOnClickListener(view1->{
@@ -93,7 +122,7 @@ public class MenuFragment extends Fragment {
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
             fragmentTransaction.replace(R.id.screen_container, contactListFragment);
             fragmentTransaction.commit();
-            fragmentTransaction.addToBackStack(null);
+//            fragmentTransaction.addToBackStack(null);
             removeFragment(this);
 
 
@@ -102,15 +131,24 @@ public class MenuFragment extends Fragment {
 
         locationHistoryButton = view.findViewById(R.id.buttonLocationHistoryFragment);
         locationHistoryButton.setOnClickListener(view1->{
-            UserLocationHistoryFragment userLocationHistoryFragment = new UserLocationHistoryFragment();
-            FragmentManager fragmentManager = getFragmentManager();
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.screen_container, userLocationHistoryFragment);
-            fragmentTransaction.commit();
-            fragmentTransaction.addToBackStack(null);
-            removeFragment(this);
+//            UserLocationHistoryFragment userLocationHistoryFragment = new UserLocationHistoryFragment();
+//            FragmentManager fragmentManager = getFragmentManager();
+//            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+//            fragmentTransaction.replace(R.id.screen_container, userLocationHistoryFragment);
+//            fragmentTransaction.commit();
+//            fragmentTransaction.addToBackStack(null);
+//            removeFragment(this);
 
-            //((MapsActivity)getActivity()).downloadCloudImages();
+
+            if(((MapsActivity) getActivity()).isUserSignedIn) {
+                ((MapsActivity) getActivity()).toggleNavigation();
+            }
+            else{
+                Toast.makeText(getActivity().getApplicationContext(), "Please login to continue", Toast.LENGTH_LONG).show();
+
+            }
+
+
 
         });
         uploadImagesToCloudbutton = view.findViewById(R.id.syncLocalDbWithCloudButton);
@@ -132,16 +170,16 @@ public class MenuFragment extends Fragment {
         });
 
 
-        navigationOptionButton = view.findViewById(R.id.buttonNavigationOptionFragment);
-        navigationOptionButton.setOnClickListener(view1->{
-            NavigationOptionFragment navigationOptionFragment = NavigationOptionFragment.newInstance(((MapsActivity)getActivity()).getCurAppMode());
-            FragmentManager fragmentManager = getFragmentManager();
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.screen_container, navigationOptionFragment);
-            fragmentTransaction.commit();
-            fragmentTransaction.addToBackStack(null);
-            removeFragment(this);
-        });
+//        navigationOptionButton = view.findViewById(R.id.buttonNavigationOptionFragment);
+//        navigationOptionButton.setOnClickListener(view1->{
+//            NavigationOptionFragment navigationOptionFragment = NavigationOptionFragment.newInstance(((MapsActivity)getActivity()).getCurAppMode());
+//            FragmentManager fragmentManager = getFragmentManager();
+//            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+//            fragmentTransaction.replace(R.id.screen_container, navigationOptionFragment);
+//            fragmentTransaction.commit();
+//            fragmentTransaction.addToBackStack(null);
+//            removeFragment(this);
+//        });
 
         helpButton = view.findViewById(R.id.buttonHelpFragment);
         helpButton.setOnClickListener(view1->{
@@ -150,12 +188,52 @@ public class MenuFragment extends Fragment {
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
             fragmentTransaction.replace(R.id.screen_container, helpFragment);
             fragmentTransaction.commit();
-            fragmentTransaction.addToBackStack(null);
+//            fragmentTransaction.addToBackStack(null);
             removeFragment(this);
         });
 
 
+        signoutbutton.setOnClickListener(view1->{
+            ((MapsActivity)getActivity()).refreshCurrentUser();
+
+            ((MapsActivity)getActivity()).clearImageDirectory();
+
+            FirebaseAuth.getInstance().signOut();
+            removeFragment(this);
+//            signinbutton.setVisibility(View.VISIBLE);
+//            signupbutton.setVisibility(View.VISIBLE);
+//            signoutbutton.setVisibility(View.GONE);
+//            usernameTextView.setText("You are login as: Local Guest");
+//            usernameTextView.setVisibility(View.GONE);
+
+
+
+        });
+
+        signupbutton.setOnClickListener(view1->{
+            SignupFragment signupFragment = new SignupFragment();
+            FragmentManager fragmentManager = getFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.screen_container, signupFragment);
+            fragmentTransaction.commit();
+//            fragmentTransaction.addToBackStack(null);
+            removeFragment(this);}
+            );
+
+        signinbutton.setOnClickListener(view1->{
+            SigninFragment signinFragment = new SigninFragment();
+            FragmentManager fragmentManager = getFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.screen_container, signinFragment);
+            fragmentTransaction.commit();
+//            fragmentTransaction.addToBackStack(null);
+            removeFragment(this);});
+
         return view;
+
+
+
+
     }
 
     protected void removeFragment(Fragment fragment) {

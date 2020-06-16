@@ -85,6 +85,7 @@ public class contactListAdapter extends RecyclerView.Adapter<contactListAdapter.
     }
 
     public static class PersonViewHolder extends RecyclerView.ViewHolder {
+
         CardView cv;
         TextView contactName;
         TextView contactUserName;
