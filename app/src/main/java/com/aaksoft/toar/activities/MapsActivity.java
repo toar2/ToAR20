@@ -4,11 +4,7 @@
     25 June, 2018
  */
 package com.aaksoft.toar.activities;
-/*
-    Created By Aasharib
-    on
-    16 June, 2018
- */
+
 import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -27,16 +23,19 @@ import com.aaksoft.toar.firebase.Memory;
 import com.aaksoft.toar.firebase.Users;
 import com.aaksoft.toar.firebase.contact;
 import com.aaksoft.toar.firebase.getJointNode;
+import com.aaksoft.toar.mapbox.memoryMarker;
 import com.google.android.gms.location.LocationListener;
 
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Looper;
 import android.provider.MediaStore;
+import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
@@ -47,6 +46,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.FileProvider;
+import android.text.TextUtils;
 import android.util.Log;
 import android.util.Pair;
 import android.view.MotionEvent;
@@ -58,7 +58,6 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.FrameLayout;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -69,6 +68,7 @@ import com.google.ar.core.Anchor;
 import com.google.ar.core.HitResult;
 import com.google.ar.sceneform.AnchorNode;
 import com.google.ar.sceneform.ux.TransformableNode;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
@@ -187,6 +187,8 @@ public class MapsActivity extends FragmentActivity implements
     private PermissionsManager permissionsManager;
 
     public List<contact> userContacts;
+    public List<Memory> userMemories;
+
     private Button trackModeButton;
     private Button startNavigationButton;
     private Button dontNavigateButton;
@@ -233,7 +235,7 @@ public class MapsActivity extends FragmentActivity implements
 
 
 
-    private static final String TAG = "DirectionsActivity";     // used to debug errors in navigation activity
+    private static final String DIRECTIONS_ACTIVITY_TAG = "DirectionsActivity";     // used to debug errors in navigation activity
     private NavigationMapRoute navigationMapRoute;
     //  Defining Sceneform variables
     private boolean installRequested;
@@ -261,6 +263,8 @@ public class MapsActivity extends FragmentActivity implements
     private boolean isLocationHistoryEnabled;
     public LocalDatabaseHelper localDatabaseHelper;
     private ViewRenderable viewRenderable;
+    private ViewRenderable memoryRenderable;
+
     private Anchor anchorLocationHistoryView;
 
     int imageRenderableDistance = 100;
@@ -300,6 +304,7 @@ public class MapsActivity extends FragmentActivity implements
     StorageReference userImagesStorageReference;
     DatabaseReference usersDatabaseReference;
     DatabaseReference usersImagesDatabaseReference;
+    DatabaseReference memoriesReference;
 
     public Users currentUserPojo;
     public boolean beenGreetedOnce = false;
@@ -564,11 +569,72 @@ public class MapsActivity extends FragmentActivity implements
                     }
                 });
 
-
                 MapsActivity.this.mapboxMap.setOnMarkerClickListener(new MapboxMap.OnMarkerClickListener() {
                     @Override
                     public boolean onMarkerClick(@NonNull Marker marker) {
                         //Toast.makeText(MapsActivity.this, marker.getTitle(), Toast.LENGTH_LONG).show();
+
+
+
+                        // handling memory marker clicks
+                        boolean handled = false;
+//                        Toast.makeText(getApplicationContext(),marker.getTitle(),Toast.LENGTH_LONG).show();
+                        if(isUserSignedIn){                                                         // as there will be no memories if user is signed in
+                            if(marker.getTitle().substring(0,6).equals("memory")){                  // if the title of the marker starts with memory, then it is memory marker
+                                                                                                    // check each memory
+                                if(isLocationEnabled(getApplicationContext())){
+                                    for(int j = 0; j < userMemories.size(); j++)
+                                    {
+                                        if(userMemories.get(j).getId().equals(marker.getTitle())){
+                                            // Retrieve the contact of the person who sent this memory
+                                            Memory memoryOfThisMarker = userMemories.get(j);
+                                            contact memorySender = userContacts.get(0);
+                                            for(int i = 0; i < userContacts.size(); i++){
+                                                if(userContacts.get(i).id.equals(memoryOfThisMarker)){
+                                                    memorySender = userContacts.get(i);
+                                                    break;
+                                                }
+                                            }
+
+                                            // checking distance from memory
+
+                                            float distance = calculateDistance(lastLocation.getLatitude(), lastLocation.getLongitude(), memoryOfThisMarker.getLat(), memoryOfThisMarker.getLon());
+                                            String displayString = "Sent By: " + memorySender.name + "\nDistance To Memory: " + distance;
+                                            if(distance < imageRenderableDistance){
+                                                Toast.makeText(getApplicationContext(), displayString, Toast.LENGTH_SHORT).show();
+                                                marker.setIcon(iconFactory.fromResource(R.drawable.memoryicongreen));
+                                            }
+                                            else{
+                                                Toast.makeText(getApplicationContext(), displayString + "\nMOVE CLOSER TO MEMORY", Toast.LENGTH_SHORT).show();
+                                            }
+
+
+
+
+
+
+
+
+                                        }
+
+                                    }
+
+
+                                    }
+                                else{
+                                    Toast.makeText(getApplicationContext(), "Turn on location history to see who sent this...", Toast.LENGTH_SHORT).show();
+                                }
+
+
+                            handled = true;
+                            }
+                        }
+
+                        if(handled){return true;}
+
+
+
+
                         URI model=null;
                         for(int i = 0; i < 12; i++){
                             if(marker.getTitle().equals(modelsTitles[i])){
@@ -592,7 +658,19 @@ public class MapsActivity extends FragmentActivity implements
                         return true;
                     }
                 });
+
+
+
+
+
+
+
+
+
                 setBuildingModelMarker();
+                refreshCurrentUser();
+
+
 
                 createTimerTask(0,10000);
 //                createTimerTaskForSync(0,10000);
@@ -621,7 +699,7 @@ public class MapsActivity extends FragmentActivity implements
                 });
 
 
-        refreshCurrentUser();
+
 
 
     }
@@ -1005,10 +1083,10 @@ public class MapsActivity extends FragmentActivity implements
                         // You can get the generic HTTP info about the response
 //                        Toast.makeText((MapsActivity)getApplicationContext(), "get route" , Toast.LENGTH_LONG).show();
                         if (response.body() == null) {
-                            Log.e(TAG, "No routes found, make sure you set the right user and access token.");
+                            Log.e(DIRECTIONS_ACTIVITY_TAG, "No routes found, make sure you set the right user and access token.");
                             return;
                         } else if (response.body().routes().size() < 1) {
-                            Log.e(TAG, "No routes found");
+                            Log.e(DIRECTIONS_ACTIVITY_TAG, "No routes found");
                             return;
                         }
                         currentRoute = response.body().routes().get(0);
@@ -1025,7 +1103,7 @@ public class MapsActivity extends FragmentActivity implements
 
                     @Override
                     public void onFailure(Call<DirectionsResponse> call, Throwable throwable) {
-                        Log.e(TAG, "Error: " + throwable.getMessage());
+                        Log.e(DIRECTIONS_ACTIVITY_TAG, "Error: " + throwable.getMessage());
 
                     }
                 });
@@ -1041,6 +1119,33 @@ public class MapsActivity extends FragmentActivity implements
         }
 
     }
+
+    private void setMemoryMarkers(){
+        if(isUserSignedIn && (userMemories.size()>0)){
+            for(int i = 0 ; i < userMemories.size() ; i ++) {
+                setSingleMemoryMarker(userMemories.get(i).getId(), new LatLng(userMemories.get(i).getLat(), userMemories.get(i).getLon()));
+            }
+        }
+
+
+    }
+
+
+    private void setSingleMemoryMarker(String id, LatLng MemoryLocation){
+
+        // this function is aimed to recieve a memory, and place a marker for that memory
+        Icon icon = iconFactory.fromResource(R.drawable.memoryiconred);
+
+
+        markerTypeArrayList.add(new MarkerType(mapboxMap.addMarker(new MarkerOptions().position(MemoryLocation).title(id).icon(icon)), "MemoryMarker"));
+
+
+
+
+    }
+
+
+
 
     protected void setFragment(Fragment fragment) {
         FragmentManager fragmentManager = getSupportFragmentManager();
@@ -1211,6 +1316,7 @@ public class MapsActivity extends FragmentActivity implements
 
         mapboxMap.clear();                      // clearing the destination marker
         setBuildingModelMarker();
+        setMemoryMarkers();
         navigationMode(false);
         setDestinationSelected(false);
         if(navigationMapRoute!=null) {
@@ -1304,37 +1410,47 @@ public class MapsActivity extends FragmentActivity implements
 
 
     private void takePhoto() {
-        final String uniqueFileName = generateUniqueImageName();
-        final String localFilePath = generateFilePathLocal(uniqueFileName);
-        ArSceneView view = fragment.getArSceneView();
 
-        // Create a bitmap the size of the scene view.
-        final Bitmap bitmap = Bitmap.createBitmap(view.getWidth(), view.getHeight(), Bitmap.Config.ARGB_8888);
 
-        // Create a handler thread to offload the processing of the image.
-        final HandlerThread handlerThread = new HandlerThread("PixelCopier");
-        handlerThread.start();
+        if(isLocationEnabled(this.getApplicationContext())){
 
-        // Make the request to copy.
-        PixelCopy.request(view, bitmap, (copyResult) -> {
-            if (copyResult == PixelCopy.SUCCESS) {
-                MapsActivity.this.runOnUiThread(new Runnable() {
-                    public void run() {
-                        UserPictureCapturePreviewDetailFragment userPictureCapturePreviewDetailFragment = UserPictureCapturePreviewDetailFragment.newInstance(bitmap, uniqueFileName, localFilePath, latitude, longitude, uniqueUserID, userName);
-                        FragmentManager fragmentManager = getSupportFragmentManager();
-                        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                        fragmentTransaction.add(R.id.screen_container, userPictureCapturePreviewDetailFragment);
-                        fragmentTransaction.addToBackStack(null);
-                        fragmentTransaction.commit();
-                    }
-                });
-            } else {
-                Toast toast = Toast.makeText(MapsActivity.this,
-                        "Failed to copyPixels: " + copyResult, Toast.LENGTH_LONG);
-                toast.show();
-            }
-            handlerThread.quitSafely();
-        }, new Handler(handlerThread.getLooper()));
+            final String uniqueFileName = generateUniqueImageName();
+            final String localFilePath = generateFilePathLocal(uniqueFileName);
+            ArSceneView view = fragment.getArSceneView();
+
+            // Create a bitmap the size of the scene view.
+            final Bitmap bitmap = Bitmap.createBitmap(view.getWidth(), view.getHeight(), Bitmap.Config.ARGB_8888);
+
+            // Create a handler thread to offload the processing of the image.
+            final HandlerThread handlerThread = new HandlerThread("PixelCopier");
+            handlerThread.start();
+
+            // Make the request to copy.
+            PixelCopy.request(view, bitmap, (copyResult) -> {
+                if (copyResult == PixelCopy.SUCCESS) {
+                    MapsActivity.this.runOnUiThread(new Runnable() {
+                        public void run() {
+                            UserPictureCapturePreviewDetailFragment userPictureCapturePreviewDetailFragment = UserPictureCapturePreviewDetailFragment.newInstance(bitmap, uniqueFileName, localFilePath, latitude, longitude, uniqueUserID, userName);
+                            FragmentManager fragmentManager = getSupportFragmentManager();
+                            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                            fragmentTransaction.add(R.id.screen_container, userPictureCapturePreviewDetailFragment);
+                            fragmentTransaction.addToBackStack(null);
+                            fragmentTransaction.commit();
+                        }
+                    });
+                } else {
+                    Toast toast = Toast.makeText(MapsActivity.this,
+                            "Failed to copyPixels: " + copyResult, Toast.LENGTH_LONG);
+                    toast.show();
+                }
+                handlerThread.quitSafely();
+            }, new Handler(handlerThread.getLooper()));
+
+        }
+        else{
+            Toast.makeText(getApplicationContext(), "Please enable location before taking a picture", Toast.LENGTH_LONG).show();
+        }
+
     }
 
 
@@ -1366,6 +1482,7 @@ public class MapsActivity extends FragmentActivity implements
 
     // Returns the distance between two locations
     public float calculateDistance(double userLat, double userLng, double venueLat, double venueLng) {
+
         Location location1 = new Location("");
         location1.setLatitude(userLat);
         location1.setLongitude(userLng);
@@ -1415,6 +1532,17 @@ public class MapsActivity extends FragmentActivity implements
             }
         }
     }
+
+
+    public void makeRenderableMemory(Memory memoryToRender){
+
+
+
+
+
+    }
+
+
 
     public void makeRenderablePicture(){
         ViewRenderable.builder()
@@ -2013,10 +2141,12 @@ public class MapsActivity extends FragmentActivity implements
         this.mAuth = FirebaseAuth.getInstance();            // get an instance of firebase authentication
         this.currentUser = mAuth.getCurrentUser();          // null if noone is signed in, otherwise contains user id
 
-
+        userContacts = new ArrayList<contact>();
         if(this.currentUser != null){
+            userMemories = new ArrayList<Memory>();
             // Changes to make sure if the current user is not null
             setUniqueUserID(currentUser.getUid());
+
             isUserSignedIn = true;
 
 
@@ -2024,6 +2154,8 @@ public class MapsActivity extends FragmentActivity implements
             // Images from the cloud
             this.usersDatabaseReference = FirebaseDatabase.getInstance().getReference("users").child(getUniqueUserID());
             this.usersImagesDatabaseReference = usersDatabaseReference.child("userImages");
+
+            this.memoriesReference = FirebaseDatabase.getInstance().getReference().child("users").child(getUniqueUserID()).child("memories");
 
             // storage reference will remain the same
             this.userImagesStorageReference = FirebaseStorage.getInstance().getReference("usersImages/" + getUniqueUserID()+"/");
@@ -2075,6 +2207,7 @@ public class MapsActivity extends FragmentActivity implements
 
             getUserContacts();
             downloadCloudImages();
+            downloadUserMemories();
         }
 
         else{
@@ -2082,8 +2215,11 @@ public class MapsActivity extends FragmentActivity implements
             currentUserPojo = null;
             setUniqueUserID("1");
             setUserName("local");
+            userMemories = new ArrayList<Memory>();
+            userContacts = new ArrayList<contact>();
+            removeMapMarkerOfParticularClass("MemoryMarker");
             isUserSignedIn = false;
-            userContacts = new ArrayList<contact>();            // re init
+                        // re init
 
             localDatabaseHelper.clearImagesDatabase();           // Clears the whole images database
             localDatabaseHelper.clearSettingsDatabase();                // Clears the whole settings database
@@ -2136,8 +2272,6 @@ public class MapsActivity extends FragmentActivity implements
     }
 
 
-    // function to intiate messaganger
-
     public void goToMessanger(View view){
         String contactId = (String)view.getTag();
         String uName = "";
@@ -2173,6 +2307,96 @@ public class MapsActivity extends FragmentActivity implements
         }
         Toast.makeText(getApplicationContext(), "Memories Sent to Selected Contacts", Toast.LENGTH_LONG).show();
     }
+
+    public void downloadUserMemories(){
+//
+//        memoriesReference ;
+
+
+        ChildEventListener childEventListener = new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String previousChildName) {
+                Log.d(DIRECTIONS_ACTIVITY_TAG, "onChildAdded:" + dataSnapshot.getKey());
+                Toast.makeText(getApplicationContext(), dataSnapshot.getKey(), Toast.LENGTH_LONG).show();
+                Memory newM = dataSnapshot.getValue(Memory.class);
+                newM.setId("memory" + dataSnapshot.getKey());
+                setSingleMemoryMarker(newM.getId(), new LatLng(newM.getLat(), newM.getLon()));
+                userMemories.add(newM);
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String previousChildName) {
+                Log.d(DIRECTIONS_ACTIVITY_TAG, "onChildChanged:" + dataSnapshot.getKey());
+
+//                // A comment has changed, use the key to determine if we are displaying this
+//                // comment and if so displayed the changed comment.
+//                Comment newComment = dataSnapshot.getValue(Comment.class);
+//                String commentKey = dataSnapshot.getKey();
+//
+//                // ...
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+                Log.d(DIRECTIONS_ACTIVITY_TAG, "onChildRemoved:" + dataSnapshot.getKey());
+
+                // A comment has changed, use the key to determine if we are displaying this
+                // comment and if so remove it.
+                String commentKey = dataSnapshot.getKey();
+
+                // ...
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String previousChildName) {
+                Log.d(DIRECTIONS_ACTIVITY_TAG, "onChildMoved:" + dataSnapshot.getKey());
+
+//                // A comment has changed position, use the key to determine if we are
+//                // displaying this comment and if so move it.
+//                Comment movedComment = dataSnapshot.getValue(Comment.class);
+//                String commentKey = dataSnapshot.getKey();
+//
+//                // ...
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.w(DIRECTIONS_ACTIVITY_TAG, "postComments:onCancelled", databaseError.toException());
+                Toast.makeText(getApplicationContext(), "Failed to load comments.",
+                        Toast.LENGTH_SHORT).show();
+            }
+        };
+
+        memoriesReference.addChildEventListener(childEventListener);
+
+
+    }
+
+    public static boolean isLocationEnabled(Context context) {
+        int locationMode = 0;
+        String locationProviders;
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT){
+            try {
+                locationMode = Settings.Secure.getInt(context.getContentResolver(), Settings.Secure.LOCATION_MODE);
+
+            } catch (Settings.SettingNotFoundException e) {
+                e.printStackTrace();
+                return false;
+            }
+
+            return locationMode != Settings.Secure.LOCATION_MODE_OFF;
+
+        }else{
+            locationProviders = Settings.Secure.getString(context.getContentResolver(), Settings.Secure.LOCATION_PROVIDERS_ALLOWED);
+            return !TextUtils.isEmpty(locationProviders);
+        }
+
+
+    }
+
+
+
 
 }
 

@@ -186,15 +186,6 @@
             android:background="@color/application_sec_background_color">
 
             <Button
-                android:id="@+id/buttonTest1"
-                android:layout_width="14dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.2"
-                android:drawablePadding="0dp"
-                android:text="test"
-                android:visibility="visible" />
-
-            <Button
                 android:id="@+id/mapModeButton"
                 android:layout_width="5dp"
                 android:layout_height="wrap_content"

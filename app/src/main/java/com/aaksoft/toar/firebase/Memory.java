@@ -9,6 +9,15 @@ public class Memory {
     double lat;
     double lon;
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    String id;
 
     public String getImageUri() {
         return imageUri;
