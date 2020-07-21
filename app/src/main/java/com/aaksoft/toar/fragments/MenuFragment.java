@@ -122,7 +122,7 @@ public class MenuFragment extends Fragment {
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
             fragmentTransaction.replace(R.id.screen_container, contactListFragment);
             fragmentTransaction.commit();
-//            fragmentTransaction.addToBackStack(null);
+            fragmentTransaction.addToBackStack(null);
             removeFragment(this);
 
 

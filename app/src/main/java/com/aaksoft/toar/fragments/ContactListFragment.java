@@ -44,6 +44,7 @@ public class ContactListFragment extends Fragment {
             FragmentTransaction ft = Fm.beginTransaction();
             ft.replace(R.id.screen_container, newContactFragment);
             ft.commit();
+            ft.addToBackStack(null);
             removeFragment(this);
 
 
